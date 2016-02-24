@@ -1,2 +1,2 @@
-# cogitor.github.io
-the public Github Pages repo for https://cogitor.github.io/
+# EmilVarga.com
+the public Github Pages repo for http://emilvarga.com/
