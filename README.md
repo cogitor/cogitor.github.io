@@ -1,2 +1,1 @@
-# EmilVarga.com
-the public Github Pages repo for http://emilvarga.com/
+The public Github Pages repo for http://emilvarga.com/
