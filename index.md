@@ -1,7 +1,6 @@
 ---
-layout: null
-title: Emil Varga's Blog
-tagline: Software Engineering Musings
+layout: default
+title: Emil Varga
 ---
-
-## A sample page hosted at [Github Pages](https://github.com/cogitor/cogitor.github.io)
+# {{ page.title }}
+A personal page hosted at [Github Pages](https://github.com/cogitor/cogitor.github.io)

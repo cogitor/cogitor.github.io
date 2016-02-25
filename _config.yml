@@ -1,7 +1,8 @@
-title : Emil Varga
-tagline: Software Engineering Musings
-author :
-  name : Emil Varga
-  email : emil.varga(at)gmail.com
-  github : cogitor
-  twitter : emvar
+title: Emil Varga
+author:
+  name: Emil Varga
+  email: emil.varga (at) gmail.com
+  github: cogitor
+  twitter: emvar
+
+permalink: /blog/:year/:month/:day/:title
