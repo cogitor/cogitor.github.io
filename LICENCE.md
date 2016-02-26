@@ -1,3 +1,8 @@
+---
+layout: licence
+title: LICENSE
+---
+
 ## creative commons
 
 # Attribution-NonCommercial-NoDerivatives 4.0 International

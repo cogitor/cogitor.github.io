@@ -1,42 +1,73 @@
+* {
+  margin: 0;
+}
+
 html, body {
-    padding:0;
-    height:100%;
-    width: 95%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* licence file settings */
+body.licence {
+    padding: 10px;
 }
 
 .container {
-    min-height:100%;
+    min-height: 100%;
     position:relative;
 }
+
+.body {
+    padding: 20px;
+    min-height: 100%;
+    margin-bottom:-40px;
+}
+
+/* the little hack from https://css-tricks.com/snippets/css/sticky-footer/ */
+.body:after {
+  content: "";
+  display: block;
+}
+
+.footer, .body:after {
+    height:40px;
+}
+
+/* footer settings */
+.footer {
+    padding: 10px;
+    position:absolute;
+    bottom:0;
+    font-size: .8em;
+}
+
+.footer ul {
+    padding: 0px;
+    list-style: none;
+}
+
+.footer ul li {
+    display: inline;
+    padding-left: 20px;
+}
+
+/* header settings */
 
 .header {
     padding:10px;
 }
 
-.body {
-    padding:10px;
-    padding-bottom:60px;   /* Height of the footer */
-    min-height: 100%;
-    height: 100%;
-}
-
-.push, .footer {
-    position:absolute;
-    bottom:0;
-    height:60px;   /* Height of the footer */
-    font-size: .8em;
-}
-
-nav ul, .footer ul {
-    font-family: 'Open Sans', sans-serif;
+.header nav ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
 }
-nav ul li, .footer ul li {
+.header nav ul li {
     display: inline;
-    margin-right: 20px;
+    padding-left: 20px;
 }
+
+/* link settings */
 
 a {
     color: #333;
@@ -46,19 +77,22 @@ a:hover {
     color: #999;
 }
 
+/* page content settings */
+
 h1 {
+    padding: 10px;
     font-size: 3em;
-    font-family: 'Open Sans', sans-serif;
 }
+
 p {
+    padding: 10px;
     font-size: 1.5em;
-    font-family: 'Open Sans', sans-serif;
     line-height: 1.4em;
     color: #555;
 }
 
 ul.posts { 
-    margin: 20px auto 40px; 
+    padding: 20px; 
     font-size: 1.5em;
 }
 
