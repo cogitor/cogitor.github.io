@@ -1,13 +1,11 @@
 ---
-title: Tags
-header: Posts By Tag
-group: navigation
+title: Posts By Tag
 ---
 <h1>{{page.title}}</h1>
 <ul class="tag_box inline">
   {% assign tags_list = site.tags %}  
   {% for tag in tags_list %} 
-    <li><a href="/tags/#{{ tag[0] }}-ref">{{ tag[0] }} <!--<span>{{ tag[1].size }}</span>--></a></li>
+    <li><a href="/tags/#{{ tag[0] }}-ref">{{ tag[0] }} </a></li>
   {% endfor %}
 </ul>
 

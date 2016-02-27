@@ -123,12 +123,20 @@ span.meta {
     color: #444;
 }
 
-ul.posts { 
-    padding: 20px; 
+ul.posts, a.latest {
+    padding: 10px;
     font-size: 1.5em;
 }
 
-ul.posts li {
+.latest p {
+    font-size: 1.2em;
+}
+
+ul.latest li {
+    padding-bottom: 20px;
+}
+
+ul.posts li, ul.latest li {
     list-style: none;
 }
 
