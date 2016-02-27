@@ -71,13 +71,18 @@ html, body {
 }
 
 /* link settings */
-
 a {
     color: #333;
-    /*text-decoration: underline;*/
+    text-decoration: none;
 }
+
+.body a {
+    color: #999;
+}
+
 a:hover {
     color: #999;
+    text-decoration: underline;
 }
 
 /* page content settings */
@@ -93,11 +98,29 @@ h2 {
     color: #333;
 }
 
-p {
+h3 {
+    padding: 10px;
+}
+
+.body div {
+    padding: 10px;
+}
+
+.body p {
     padding: 10px;
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #555;
+    color: #333;
+}
+
+p.meta {
+    font-size: 1.2em;
+    color: #444;
+}
+
+span.meta {
+    font-size: 0.8em;
+    color: #444;
 }
 
 ul.posts { 
@@ -110,10 +133,51 @@ ul.posts li {
 }
 
 .divider {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
+/* tag_box */
+.tag_box {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.tag_box li {
+    line-height: 28px;
+}
+
+.tag_box li i {
+    opacity: 0.9;
+}
+
+.tag_box.inline li {
+    float: left;
+}
+
+.tag_box a {
+    padding: 3px 6px;
+    margin: 2px;
+    background: #555;
+    color: #FFF;
+    text-decoration: none;
+}
+
+/*
+.tag_box a span {
+    vertical-align: super;
+    font-size: 0.8em;
+}
+*/
+
+.tag_box a:hover {
+    background: #FFF;
+    color: #555;
+}
+
+/* 404 page */
 .error {
     color: #F78181;
 }

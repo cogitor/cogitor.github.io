@@ -7,6 +7,12 @@ author:
   linkedin: emilvarga
 
 permalink: /blog/:year/:month/:day/:title
+production_url: http://emilvarga.com
+
+highlighter: pygments
+markdown: redcarpet
+redcarpet:
+  extensions: []
 
 defaults:
   -
@@ -14,3 +20,9 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+  -
+    scope:
+      path: "blog"
+      type: "posts"
+    values:
+      layout: "post"
