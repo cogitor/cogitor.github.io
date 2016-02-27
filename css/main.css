@@ -102,10 +102,6 @@ h3 {
     padding: 10px;
 }
 
-.body div {
-    padding: 10px;
-}
-
 .body p {
     padding: 10px;
     font-size: 1.5em;
@@ -116,6 +112,7 @@ h3 {
 p.meta {
     font-size: 1.2em;
     color: #444;
+    padding-bottom: 20px;
 }
 
 span.meta {
@@ -130,6 +127,11 @@ ul.posts, a.latest {
 
 .latest p {
     font-size: 1.2em;
+}
+
+ul.latest {
+    padding-left: 0px;
+    padding-top: 20px;
 }
 
 ul.latest li {

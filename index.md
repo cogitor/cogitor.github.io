@@ -6,9 +6,6 @@ tagline: Software Engineering Musings
 
 A personal blog hosted at [Github Pages](https://github.com/cogitor/cogitor.github.io)
 
-</br>
-
-
 <ul class="latest">
   {% for post in site.posts limit 4 %}
     <li>
