@@ -17,6 +17,17 @@ With adding a 404 page and a css file, one can start adding some style and conte
 
 Having at least one default layout file allows you to keep the reusable html components separated in one single file. Beside being highly reusable, this can be utilised to try and write content pages completely in markdown. If you fancy markdown. I didn't make up my mind about it yet.
 
+### An example markdown file: index.md
+
+```
+---
+title: My Website
+layout: default
+---
+{{"{{ page.title "}}}}
+```
+
+
 ### An example layout file: default.html
 
 ```
@@ -39,11 +50,6 @@ Having at least one default layout file allows you to keep the reusable html com
 </head>
 ```
 
-### An example markdown file: index.md
+The include tags you can see in the example are pretty handy too - you can separate common snippets into their own files and maintain structure and readability.
 
-```
----
-title: My Website
-layout: default
----
-{{"{{ page.title "}}}}
+Now I'm off to build this website..
