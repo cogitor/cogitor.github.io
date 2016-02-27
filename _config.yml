@@ -9,7 +9,6 @@ author:
 permalink: /blog/:year/:month/:day/:title
 production_url: http://emilvarga.com
 
-highlighter: pygments
 markdown: redcarpet
 redcarpet:
   extensions: []

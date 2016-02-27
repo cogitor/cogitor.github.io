@@ -1,0 +1,17 @@
+.hljs {
+  display: block;
+  background: white;
+  color: #111111;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  line-height: 1.5;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.hljs-tag {
+  font-weight: bold;
+}
+
+.hljs-comment {
+  color: #999;
+}
