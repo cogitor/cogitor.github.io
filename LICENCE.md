@@ -1,5 +1,5 @@
 ---
-layout: licence
+layout: default
 title: LICENSE
 ---
 
