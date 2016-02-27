@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Emil Varga
 tagline: Software Engineering Musings
 ---
