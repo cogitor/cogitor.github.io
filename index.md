@@ -1,5 +1,6 @@
 ---
 title: Emil Varga
+description: Emil Varga - A personal blog
 ---
 # {{ page.title }}
 

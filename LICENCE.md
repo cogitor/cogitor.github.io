@@ -1,5 +1,6 @@
 ---
 title: LICENSE
+description: LICENSE
 ---
 
 ## creative commons

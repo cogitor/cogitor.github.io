@@ -3,6 +3,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" href="/favicon.ico">
   <title>{{ page.title }}</title>
+  {% if page.description != null %}
+    <meta type="description" content="{{ page.description }}" >
+  {% else %}
+    <meta type="description" content="{{ page.content | split:'<!--break-->' | first | strip_html | strip_newlines }}">
+  {% endif %}
   <link href="/rss.xml" rel="alternate" type="application/rss+xml" title="emilvarga.com">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <!-- fonts -->
