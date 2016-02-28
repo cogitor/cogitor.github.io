@@ -175,13 +175,6 @@ ul.posts li, ul.latest li {
     text-decoration: none;
 }
 
-/*
-.tag_box a span {
-    vertical-align: super;
-    font-size: 0.8em;
-}
-*/
-
 .tag_box a:hover {
     background: #FFF;
     color: #555;
@@ -190,4 +183,8 @@ ul.posts li, ul.latest li {
 /* 404 page */
 .error {
     color: #F78181;
+}
+
+#disqus_thread {
+    padding-top: 20px;
 }
