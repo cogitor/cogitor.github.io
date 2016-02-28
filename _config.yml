@@ -6,7 +6,7 @@ author:
   twitter: emvar
   linkedin: emilvarga
 
-permalink: /pages/:year/:month/:day/:title
+permalink: /posts/:year/:month/:day/:title
 production_url: http://emilvarga.com
 markdown: kramdown
 
@@ -18,7 +18,7 @@ defaults:
       layout: "default"
   -
     scope:
-      path: "pages"
+      path: "posts"
       type: "posts"
     values:
       layout: "post"

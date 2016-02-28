@@ -1,5 +1,5 @@
 ---
-title: Let's get it working!
+title: Let's Get It Working!
 date: 2016-02-27
 tags: [jekyll, github pages]
 ---
