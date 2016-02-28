@@ -4,10 +4,17 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <title>{{ page.title }}</title>
   {% if page.description != null %}
-    <meta type="description" content="{{ page.description }}" >
+    {% assign desc = page.description %}
   {% else %}
-    <meta type="description" content="{{ page.content | split:'<!--break-->' | first | strip_html | strip_newlines }}">
+    {% assign desc = page.content | split:'<!--break-->' | first | strip_html | strip_newlines %}
   {% endif %}
+  <meta type="description" content="{{ desc }}" >
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="{{ site.production_url }}{{ page.url }}">
+
   <link href="/rss.xml" rel="alternate" type="application/rss+xml" title="emilvarga.com">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <!-- fonts -->
