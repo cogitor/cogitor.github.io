@@ -1,7 +1,7 @@
 ---
 title: Let's get it working!
 date: 2016-02-27
-tags: [jekyll, github-pages]
+tags: [jekyll, github pages]
 ---
 
 Here we go! Coming late to the game but I'm finally diving into setting up a website on Github Pages. It's super fun and pretty simple to set up.
