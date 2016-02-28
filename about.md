@@ -1,5 +1,6 @@
 ---
 title: Who am I?
+description: About Emil Varga
 ---
 # {{ page.title }}
 

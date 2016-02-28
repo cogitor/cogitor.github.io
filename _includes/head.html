@@ -2,18 +2,24 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" href="/favicon.ico">
+  <!-- helpers to render link content on external websites -->
   <title>{{ page.title }}</title>
   {% if page.description != null %}
     {% assign desc = page.description %}
-    {% assign type = "website" %}
   {% else %}
     {% assign desc = page.content | split:'<!--break-->' | first | strip_html | strip_newlines %}
-    {% assign type = "article" %}
   {% endif %}
   <meta type="description" content="{{ desc }}" >
+  <meta itemprop="name" content="{{ page.title }}">
+  <meta itemprop="description" content="{{ desc }}">
+  <meta name="twitter:card" content="summary" >
+  <meta name="twitter:site" content="@emvar" >
+  <meta name="twitter:title" content="{{ page.title }}" >
+  <meta name="twitter:description" content="{{ desc }}" >
+  <meta name="twitter:creator" content="@emvar">
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ desc }}">
-  <meta property="og:type" content="{{ type }}">
+  <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:url" content="{{ site.production_url }}{{ page.url }}">
 
