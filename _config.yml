@@ -1,5 +1,4 @@
 title: Emil Varga
-tagline: Software Engineering Musings
 author:
   name: Emil Varga
   email: emil.varga (at) gmail.com
@@ -7,8 +6,9 @@ author:
   twitter: emvar
   linkedin: emilvarga
 
-permalink: /blog/:year/:month/:day/:title
+permalink: /pages/:year/:month/:day/:title
 production_url: http://emilvarga.com
+markdown: kramdown
 
 defaults:
   -
@@ -18,7 +18,7 @@ defaults:
       layout: "default"
   -
     scope:
-      path: "blog"
+      path: "pages"
       type: "posts"
     values:
       layout: "post"
