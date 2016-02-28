@@ -9,8 +9,10 @@ A personal blog hosted at [GitHub Pages](https://github.com/cogitor/cogitor.gith
   {% for post in site.posts limit 4 %}
     <li>
       <h2>{{ post.title }}</h2>
-      <p>{{ post.content | truncatewords:80}}</p>
-      <a class="latest" href="{{ post.url }}">Read more</a>
+      {{ post.content | split:'<!--break-->' | first }}
+      {% if post.content contains '<!--break-->' %}
+        <a class="latest" href="{{ post.url }}">Read more</a>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>

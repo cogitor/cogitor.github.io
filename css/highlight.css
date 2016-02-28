@@ -1,7 +1,7 @@
 .hljs {
   display: block;
   background: white;
-  color: #111111;
+  color: #111;
   font-family: Menlo, Monaco, Consolas, monospace;
   line-height: 1.5;
   overflow-x: auto;
@@ -18,5 +18,9 @@
 }
 
 .hljs-subst {
-  color: #111111;
+  color: #111;
+}
+
+.hljs-meta {
+  color: #333;
 }

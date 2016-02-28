@@ -8,6 +8,8 @@ Here we go! Coming late to the game but I'm finally diving into setting up a web
 
 The [Github Pages documentation](https://pages.github.com/) is a really well written, the [Jenkyll](http://jekyllrb.com/) too. Reading up on a couple of guides like [Jonathan McGlone's](http://jmcglone.com/guides/github-pages/).. So far so good.
 
+<!--break-->
+
 I would like to start by building a simple, minimalistic web page usic a static site generator. As in Simple is Better. 
 
 I like the ideas of the [Jekyll Bootstrap](http://jekyllbootstrap.com/), and I can see there are definitelly [a few alternatives out there](https://www.staticgen.com/) but I'm thinking of experimenting with the basics first as a learing experience. So, pure Jenkyll it is.
@@ -47,7 +49,7 @@ layout: default
       </div>
     </div>
   </body>
-</head>
+</html>
 ~~~
 
 The include tags you can see in the example are pretty handy too - you can separate common snippets into their own files and maintain structure and readability.
