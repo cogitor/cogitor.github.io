@@ -1,3 +1,1 @@
-The public Github Pages repo for http://emilvarga.com/.
-
-Static site generated using Jekyll.
+The public Github Pages repo for http://emilvarga.com/ using the Jekyll static site generator.
