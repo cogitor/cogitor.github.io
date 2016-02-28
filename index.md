@@ -1,10 +1,7 @@
 ---
-title: Emil Varga
-tagline: Software Engineering Musings
+title: Emil Varga - Software Engineering Musings
 ---
 # {{ page.title }}
-
-A personal blog hosted at [Github Pages](https://github.com/cogitor/cogitor.github.io)
 
 <ul class="latest">
   {% for post in site.posts limit 4 %}
