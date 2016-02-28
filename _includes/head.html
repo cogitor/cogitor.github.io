@@ -7,7 +7,7 @@
   {% if page.description != null %}
     {% assign desc = page.description %}
   {% else %}
-    {% assign desc = page.content | split:'<!--break-->' | first | strip_html | strip_newlines %}
+    {% assign desc = page.content | split:'<!--break-->' | first | strip_html | strip_newlines | truncate:156 %}
   {% endif %}
   <meta type="description" content="{{ desc }}" >
   <meta itemprop="name" content="{{ page.title }}">
