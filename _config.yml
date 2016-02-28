@@ -6,6 +6,7 @@ author:
   twitter: emvar
   linkedin: emilvarga
 
+image: http://emilvarga.com/assets/typing.jpg
 permalink: /posts/:year/:month/:day/:title
 production_url: http://emilvarga.com
 markdown: kramdown
