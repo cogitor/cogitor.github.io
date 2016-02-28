@@ -5,13 +5,15 @@
   <title>{{ page.title }}</title>
   {% if page.description != null %}
     {% assign desc = page.description %}
+    {% assign type = "website" %}
   {% else %}
     {% assign desc = page.content | split:'<!--break-->' | first | strip_html | strip_newlines %}
+    {% assign type = "article" %}
   {% endif %}
   <meta type="description" content="{{ desc }}" >
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ desc }}">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ type }}">
   <meta property="og:locale" content="en_US">
   <meta property="og:url" content="{{ site.production_url }}{{ page.url }}">
 
