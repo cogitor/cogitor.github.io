@@ -54,4 +54,4 @@ layout: default
 
 The include tags you can see in the example are pretty handy too - you can separate common snippets into their own files and maintain structure and readability.
 
-Now I'm off to build this website..
+Now I'm off to build [this website](https://github.com/cogitor/cogitor.github.io)..
