@@ -7,18 +7,21 @@
   {% if page.description != null %}
     {% assign desc = page.description %}
   {% else %}
-    {% assign desc = page.content | split:'<!--break-->' | first | strip_html | strip_newlines | truncate:156 %}
+    {% assign desc = page.excerpt | strip_html | strip_newlines | truncate:156 %}
   {% endif %}
   <meta type="description" content="{{ desc }}" >
+  <!-- google plus -->
   <meta itemprop="name" content="{{ page.title }}">
   <meta itemprop="description" content="{{ desc }}">
   <meta itemprop="image" content="{{ site.image }}">
+  <!-- twitter summary card -->
   <meta name="twitter:card" content="summary" >
   <meta name="twitter:site" content="@emvar" >
   <meta name="twitter:title" content="{{ page.title }}" >
   <meta name="twitter:description" content="{{ desc }}" >
   <meta name="twitter:creator" content="@emvar">
   <meta name="twitter:image:src" content="{{ site.image }}">
+  <!-- facebook and linkedin -->
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ desc }}">
   <meta property="og:type" content="website">
