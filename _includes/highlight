@@ -1,0 +1,14 @@
+<!-- lazy loaded code highlights -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+<script>
+  var cb = function() {
+    var l = document.createElement('link'); l.rel = 'stylesheet';
+    l.href = '/css/highlight.css';
+    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+  };
+  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(cb);
+  else window.addEventListener('load', cb);
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
