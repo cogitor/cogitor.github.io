@@ -30,15 +30,14 @@ html, body {
 
 /* footer settings */
 .footer {
-    padding: 10px;
     position:absolute;
     bottom:0;
     font-size: .8em;
-    width: 95%;
+    width: 100%;
 }
 
 .footer ul {
-    padding: 0px;
+    padding: 10px;
     list-style: none;
     position:absolute;
     bottom: 10px;
