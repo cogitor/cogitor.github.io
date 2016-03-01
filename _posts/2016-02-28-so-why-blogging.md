@@ -4,7 +4,7 @@ date: 2016-02-28
 tags: [blogging]
 ---
 
-I was asked a couple of times if I have a personal website, especially by non-techy friends who would assume that if I can build one I should have one. And I can't say they're wrong. But the answer was always no, with an iteration over various excuses and a feeling that I should probably do something about it. In some shape of form. As soon as I figure out the form.
+I was asked a couple of times if I have a personal website, especially by non-techy friends who would assume that if I can build one I should have one. And I can't say they're wrong. But the answer was always no, with an iteration over various excuses and a feeling that I should probably do something about it. In some shape or form. As soon as I figure out the form.
 
 <!--break-->
 
