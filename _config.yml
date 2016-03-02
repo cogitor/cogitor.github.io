@@ -6,9 +6,9 @@ author:
   twitter: emvar
   linkedin: emilvarga
 
-image: http://emilvarga.com/assets/typing.jpg
+image: https://emilvarga.com/assets/typing.jpg
 permalink: /posts/:year/:month/:day/:title
-production_url: http://emilvarga.com
+production_url: https://emilvarga.com
 markdown: kramdown
 excerpt_separator: <!--break-->
 
