@@ -90,9 +90,8 @@ a:hover {
 }
 
 /* page content settings */
-
-.body img {
-    width:100%;
+.body source, .body img {
+    width: 100%;
     max-width: 800px;
 }
 
