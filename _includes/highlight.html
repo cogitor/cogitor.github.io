@@ -1,4 +1,7 @@
 <!-- lazy loaded code highlights -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js" defer></script>
 {% include lazy_css.html css_path='/css/highlight.css' %}
-<script>hljs.initHighlightingOnLoad();</script>
+<script>function loadHighligh(){hljs.initHighlighting();}
+addEventListener('DOMContentLoaded', loadHighligh, false);
+addEventListener('load', loadHighligh, false);
+</script>
