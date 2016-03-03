@@ -1,7 +1,8 @@
 <div class="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="{{ site.baseurl }}/assets/{{include.name}}.jpg">
-    <source srcset="{{ site.baseurl }}/assets/{{include.name}}_large.jpg">
-    <img src="#" srcset="{{ site.baseurl }}/assets/{{include.name}}_large.jpg" alt="{{include.alt}}">
+    <source media="(max-width: 640px)" srcset="{{ site.baseurl }}/assets/{{include.name}}.jpg, {{ site.baseurl }}/assets/{{include.name}}_large.jpg 1.5x">
+    <source media="(max-width: 800px)" srcset="{{ site.baseurl }}/assets/{{include.name}}_large.jpg, {{ site.baseurl }}/assets/{{include.name}}_xlarge.jpg 2x">
+    <source srcset="{{ site.baseurl }}/assets/{{include.name}}_xlarge.jpg">
+    <img srcset="{{ site.baseurl }}/assets/{{include.name}}.jpg" alt="{{include.alt}}">
   </picture>
 </div>
