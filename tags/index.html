@@ -4,13 +4,13 @@ description: Emil Varga - A personal blog
 ---
 <h1>{{page.title}}</h1>
 <ul class="tag_box inline"> 
-  {% for tag in site.tags reversed %} 
-    <li><a href="/tags/#{{ tag[0] }}-ref">{{ tag[0] }} </a></li>
+  {% for tag in site.tags reversed %}
+    <li><a href="/tags/#{{ tag[0] }}-ref" onclick="select('{{ tag[0] }}-ref');">{{ tag[0] }} </a></li>
   {% endfor %}
 </ul>
 
-{% for tag in site.tags reversed %} 
-  <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
+{% for tag in site.tags reversed %}
+  <h2 class="tag_header" id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
   <ul class="posts">
   {% assign pages_list = tag[1] %}
   {% for post in pages_list %}
@@ -20,3 +20,12 @@ description: Emil Varga - A personal blog
   {% endfor %}
   </ul>
 {% endfor %}
+<script>function select(id){
+  // make sure you can execute this, otherwise just ignore this feature
+  // selection of headers is done by adding an underline
+  if (document.getElementsByClassName) {
+    var headers = document.getElementsByClassName("tag_header");
+    for (var i = 0; i < headers.length; i++) { headers[i].style.textDecoration = "none"; }
+    document.getElementById(id).style.textDecoration = 'underline';
+  }
+}</script>
