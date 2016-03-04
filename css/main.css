@@ -196,6 +196,7 @@ ul.posts li, ul.latest li {
     color: #F78181;
 }
 
+/* share links colors */
 .share {
     padding-top: 20px;
     padding-bottom: 40px;
@@ -203,4 +204,8 @@ ul.posts li, ul.latest li {
 
 .share a {
     color: #555;
+}
+
+.share a:hover {
+    color: #999;
 }
