@@ -196,6 +196,11 @@ ul.posts li, ul.latest li {
     color: #F78181;
 }
 
-#disqus_thread {
+.share {
     padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.share a {
+    color: #555;
 }
