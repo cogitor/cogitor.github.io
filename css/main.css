@@ -5,16 +5,22 @@
 html, body {
     height: 100%;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background-color: #333;
 }
 
 .container {
     min-height: 100%;
+    /* keep width for large screens */
+    max-width: 1024px;
+    margin:0 auto; /* to keep container in the middle */
     position:relative;
+    background-color: #FFF;
 }
 
 .body {
     padding: 20px;
     min-height: 100%;
+    /* footer margin - same as footer height */
     margin-bottom:-45px;
 }
 
@@ -95,6 +101,7 @@ a:hover {
     max-width: 800px;
 }
 
+/* for things like images, share links etc. */
 .center {
     text-align: center;
 }
@@ -121,12 +128,14 @@ h3 {
     color: #333;
 }
 
+/* date and tags on post */
 p.meta {
     font-size: 1.2em;
     color: #555;
     padding-bottom: 20px;
 }
 
+/* date and tags on Posts and Tags */
 span.meta {
     color: #555;
 }
@@ -152,6 +161,7 @@ ul.posts li, ul.latest li {
     list-style: none;
 }
 
+/* | between date and post name */
 .divider {
     padding-left: 10px;
     padding-right: 10px;
