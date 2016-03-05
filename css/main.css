@@ -62,7 +62,7 @@ html, body {
 /* header settings */
 
 .header {
-    padding:10px;
+    padding: 10px;
 }
 
 .header nav ul {
@@ -72,12 +72,13 @@ html, body {
 }
 .header nav ul li {
     display: inline;
-    padding-left: 20px;
+    padding-left: 2%;
 }
 
 .header .home {
     font-size: 1.2em;
     fint-weight: bold;
+    padding-left: 20px;
 }
 
 /* link settings */
