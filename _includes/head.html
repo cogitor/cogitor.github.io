@@ -10,7 +10,7 @@
   {% if page.description != null %}
     {% assign desc = page.description %}
   {% else %}
-    {% assign desc = page.excerpt | strip_html | strip_newlines | truncate:156 %}
+    {% assign desc = page.excerpt | strip_html | strip_newlines %}
   {% endif %}
   <meta type="description" content="{{ desc }}" >
   <!-- google plus -->
