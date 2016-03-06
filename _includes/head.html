@@ -12,7 +12,7 @@
   {% else %}
     {% assign desc = page.excerpt | strip_html | strip_newlines | truncate:156 %}
   {% endif %}
-  <meta type="description" content="{{ desc }}" >
+  <meta name="description" content="{{ desc }}" >
   <!-- google plus -->
   <meta itemprop="name" content="{{ page.title }}">
   <meta itemprop="description" content="{{ desc }}">
