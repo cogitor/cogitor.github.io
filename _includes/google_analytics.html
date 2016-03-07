@@ -7,3 +7,13 @@
   ga('create', 'UA-74421484-1', 'auto');
   ga('send', 'pageview');
 </script>
+<script>
+/**
+* Function that tracks a click on an outbound link in Analytics
+* This function works with a target = _blank links
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {});
+   return true;
+}
+</script>
