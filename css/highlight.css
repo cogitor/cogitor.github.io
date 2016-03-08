@@ -20,6 +20,7 @@ code.highlighter-rouge {
 }
 
 .hljs-tag {
+  color: #333;
   font-weight: bold;
 }
 
@@ -69,10 +70,6 @@ code.highlighter-rouge {
 .hljs-name {
   color: #333;
   font-weight: bold;
-}
-
-.hljs-tag {
-  color: #333;
 }
 
 .hljs-regexp {
