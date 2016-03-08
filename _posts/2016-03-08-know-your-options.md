@@ -12,7 +12,7 @@ Are you having troubles with Null Pointer Exceptions (NPEs)? Do you find it cumb
 
 It's a concept that originates from the [type theory](https://en.wikipedia.org/wiki/Type_theory) in mathematics, and also known in various languages as Nullable or Maybe types. You can basically think of them as collections like a set but with either exactly one value or none - <i>[ value ]</i> or <i>[ ]</i>.
 
-We will start with a use case in Java and the native java.util.Optionals in Java 8. There are other versions widely available such as [Guava Optionals](https://google.github.io/guava/releases/19.0/api/docs/com/google/common/base/Optional.html) that existed for a while longer, and also available for older versions of Java - but we will stick to the java.util version here.
+We will start with a use case in Java and the native [java.util.Optionals in Java 8](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html). There are other versions widely available such as [Guava Optionals](https://google.github.io/guava/releases/19.0/api/docs/com/google/common/base/Optional.html) that existed for a while longer, and also available for older versions of Java - but we will stick to the java.util version here.
 
 Say we have a defined interface we are supplied with, which returns some result value. But it may return a null value if no results.
 
@@ -97,7 +97,7 @@ Result result = calculation
 
 ## How is this done in Scala?
 
-Scala had Options built in most if not all libraries, so it's practically unavoidable to use them. A big thumbs up for Scala! There are some small differences in the syntax compared to Java Optionals:
+Scala has [Options](http://www.scala-lang.org/api/current/#scala.Option) built in most if not all libraries, so it's practically unavoidable to use them. A big thumbs up for Scala! There are some small differences in the syntax compared to Java Optionals:
 
 <pre><code class="scala">{% capture my_include %}
 def getResult: Option[Result] = {
