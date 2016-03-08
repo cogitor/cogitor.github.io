@@ -9,6 +9,14 @@
   overflow-x: auto;
   padding-left: 10px;
   padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+code.highlighter-rouge {
+  text-decoration: none;
+  font-style: italic;
+  color: #111;
+  font-family: 'Open Sans', Helvetica, Arial, monospace;
 }
 
 .hljs-tag {

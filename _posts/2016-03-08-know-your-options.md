@@ -10,52 +10,51 @@ Are you having troubles with Null Pointer Exceptions (NPEs)? Do you find it cumb
 
 ## What are Options?
 
-It's a concept that originates from the [type theory](https://en.wikipedia.org/wiki/Type_theory) in mathematics, and also known in various languages as Nullable or Maybe types. You can basically think of them as collections like a set but with either exactly one value or none - <i>[ value ]</i> or <i>[ ]</i>.
+It's a concept that originates from the [type theory](https://en.wikipedia.org/wiki/Type_theory) in mathematics, and also known in various languages as Nullable or Maybe types. You can basically think of them as collections like a set but with either exactly one value or none - `[ value ]` or `[ ]`.
 
 We will start with a use case in Java and the native [java.util.Optionals in Java 8](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html). There are other versions widely available such as [Guava Optionals](https://google.github.io/guava/releases/19.0/api/docs/com/google/common/base/Optional.html) that existed for a while longer, and also available for older versions of Java - but we will stick to the java.util version here.
 
 Say we have a defined interface we are supplied with, which returns some result value. But it may return a null value if no results.
 
-<pre><code class="java">{% capture my_include %}
-interface Calculation {
+{% capture my_include %}interface Calculation {
   Result getResult();
 }
-{% endcapture %}{{ my_include | xml_escape }}</code></pre>
+{% endcapture %}
+{% include code_snippet.html class="java" code=my_include %}
 
 If we were to just naively call this in our code, it could result it an exception:
 
-<pre><code class="java">{% capture my_include %}
-Result result = calculation.getResult();
+{% capture my_include %}Result result = calculation.getResult();
 result.doSomeWork(); // are you sure this is not null?
-{% endcapture %}{{ my_include | xml_escape }}</code></pre>
+{% endcapture %}
+{% include code_snippet.html class="java" code=my_include %}
 
 To make sure we are safe we would need to write some extra code, which is not obvious from the interface declaration:
 
-<pre><code class="java">{% capture my_include %}
-Result result = calculation.getResult();
+{% capture my_include %}Result result = calculation.getResult();
 if (result == null) {
   // log and raise metrics
   // or throw an exception
 } else {
   result.doSomeWork();
 }
-{% endcapture %}{{ my_include | xml_escape }}</code></pre>
+{% endcapture %}
+{% include code_snippet.html class="java" code=my_include %}
 
 This can easily escalate as the system grows, I've seen a few examples where it feels like most of the code is there to catch NPEs. But don't get me wrong, it is still better than a missed edge case which breaks the system in unforeseen scenarios.
 
 Now let's change our interface to use java.util.Optional:
 
-<pre><code class="java">{% capture my_include %}
-interface Calculation {
+{% capture my_include %}interface Calculation {
   Optional<Result> getResult();
 }
-{% endcapture %}{{ my_include | xml_escape }}</code></pre>
+{% endcapture %}
+{% include code_snippet.html class="java" code=my_include %}
 
 This defines a clear expectation that the returned value may not exist, and if it does, it is of type Result.
 It's also quite simple to wrap the implementation code into Optionals:
 
-<pre><code class="java">{% capture my_include %}
-class SomeCalculation implements Calculation {
+{% capture my_include %}class SomeCalculation implements Calculation {
   ...
   Optional<Result> getResult() {
     if (hasResult) {
@@ -65,24 +64,24 @@ class SomeCalculation implements Calculation {
     }
   }
 }
-{% endcapture %}{{ my_include | xml_escape }}</code></pre>
+{% endcapture %}
+{% include code_snippet.html class="java" code=my_include %}
 
 So now when we're calling the new getResult() method the picture is a bit clearer and it's much harder to forget to defend against NPEs:
 
-<pre><code class="java">{% capture my_include %}
-Optional<Result> result = calculation.getResult();
+{% capture my_include %}Optional<Result> result = calculation.getResult();
 if (result.isPresent()) {
   result.get().doSomeWork();
 } else {
   // log and raise metrics
   // or throw an exception
 }
-{% endcapture %}{{ my_include | xml_escape }}</code></pre>
+{% endcapture %}
+{% include code_snippet.html class="java" code=my_include %}
 
 Of course this is still verbose. But luckily there are some nice helper methods that can make your code more readable:
 
-<pre><code class="java">{% capture my_include %}
-// return a result or throw an exception
+{% capture my_include %}// return a result or throw an exception
 Result result = calculation
   .getResult()
   .orElseThrow(new MissingResultException());
@@ -93,14 +92,14 @@ or
 Result result = calculation
   .getResult()
   .orElse(new DefaultResult());
-{% endcapture %}{{ my_include | xml_escape }}</code></pre>
+{% endcapture %}
+{% include code_snippet.html class="java" code=my_include %}
 
 ## How is this done in Scala?
 
 Scala has [Options](http://www.scala-lang.org/api/current/#scala.Option) built in most if not all libraries, so it's practically unavoidable to use them. A big thumbs up for Scala! There are some small differences in the syntax compared to Java Optionals:
 
-<pre><code class="scala">{% capture my_include %}
-def getResult: Option[Result] = {
+{% capture my_include %}def getResult: Option[Result] = {
   if (hasResult) {
     Option(new Result()) // or Some(new Result())
   } else {
@@ -117,7 +116,8 @@ if (result.nonEmpty) {
   // log and raise metrics
   // or throw an exception
 }
-{% endcapture %}{{ my_include | xml_escape }}</code></pre>
+{% endcapture %}
+{% include code_snippet.html class="scala" code=my_include %}
 
 In the Scala implementation there are actually two types that inherit from Option: Some and None. Calling Option(value) is actually checking if the value is null and instantiating Some(value). So it's more less a matter of style if you prefer calling the Option methods or directly instantiating Some and None.
 

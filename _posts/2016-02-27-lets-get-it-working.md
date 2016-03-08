@@ -21,19 +21,18 @@ Having at least one default layout file allows you to keep the reusable html com
 
 ### An example markdown file: index.md
 
-~~~
----
+{% capture my_include %}---
 title: My Website
 layout: default
 ---
 {{"{{ page.title "}}}}
-~~~
+{% endcapture %}
+{% include code_snippet.html class="xml" code=my_include %}
 
 
 ### An example layout file: default.html
 
-~~~
-<!DOCTYPE html>
+{% capture my_include %}<!DOCTYPE html>
 <html>
   {{"{% include head.html "}}%}
   <body>
@@ -50,7 +49,8 @@ layout: default
     </div>
   </body>
 </html>
-~~~
+{% endcapture %}
+{% include code_snippet.html class="html" code=my_include %}
 
 The include tags you can see in the example are pretty handy too - you can separate common snippets into their own files and maintain structure and readability.
 
