@@ -8,11 +8,11 @@ I find higher order functions as one of the key properties of functional program
 
 <!--break-->
 
-## C Function pointers
+## Function pointers in C
 
-I first came across higher order functions through the usage of [function pointers](http://www.cprogramming.com/tutorial/function-pointers.html) in C, while still at the university. I have to admit that at the time I didn’t fully realise the value of passing functions as arguments to other functions. We used function pointers for the most usual case I know of - for [callback functions](https://en.wikipedia.org/wiki/Callback_(computer_programming)).
+I first came across higher order functions while still at the university, through the usage of [function pointers](http://www.cprogramming.com/tutorial/function-pointers.html) in C. I have to admit that at the time I didn’t realise the full potential of passing functions as arguments to other functions. We used function pointers for the most usual case I know of - [callback functions](https://en.wikipedia.org/wiki/Callback_(computer_programming)).
 
-Callback functions are useful when working with long-running or asynchronously executing operations (like mouse click events, HTTP requests etc.). They allow for asynchronous programming. You can specify a function that will be called when the asynchronous or long-running execution finishes, and pass it as an argument to the execution. In the meantime, you can continue on with other code execution, without the need to block while waiting for results.
+Callback functions are useful when working with asynchronously executing operations like UI events, HTTP requests etc. They allow for asynchronous programming. You can specify a function that will be called when the asynchronous execution is finished, and pass it as an argument to the execution. In the meantime, you can continue with other code execution, without the need to block while waiting for results.
 
 {% capture my_include %}#include <stdio.h>
 #include <string.h>
@@ -46,9 +46,11 @@ if (started > 0) {
 
 Looking back, it really makes sense that such a capable language as C has the ability to implement both [object-oriented](http://www.planetpdf.com/codecuts/pdfs/ooc.pdf) and [functional paradigms](http://blog.charlescary.com/?p=95). You can find quite a few articles on function pointers in C and I urge you to read more if interested (e.g. [here](http://c.learncodethehardway.org/book/ex18.html)).
 
-On the other hand, higher order functions have been around from the dawn of functional programming so it’s not really a surprise that one can find them in all the usual suspects like Lisp, Haskell, Erlang, Clojure, Scala etc. It may come as a surprise to some that JavaScript, the language people love to hate, has higher order functions as well. For me, it the second language I've found higher order functions in.
+On the other hand, higher order functions have been around from the dawn of functional programming so it’s not really a surprise that one can find them in all the usual suspects like Lisp, Haskell, Erlang, Clojure, Scala etc. 
 
-## JavaScript Functions
+It may come as a surprise to some that JavaScript, the language people love to hate, has higher order functions as well. For me, it's the second language I've found higher order functions in.
+
+## JavaScript functions
 
 JavaScript has some really interesting concepts explained really well by [Douglas Crockford](http://www.crockford.com/). All objects in Javascript are essentially maps of key-value pairs, where the values can be functions as well as other [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects):
 
@@ -73,7 +75,7 @@ obj.sum(); // result: 3
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-And essentially, functions are objects as well, so one can assign key-value pairs to functions, but most importantly, functions can be stored as variables, used as arguments to other functions, returned from functions etc.
+And essentially, functions are objects too. So one can assign key-value pairs to functions as well. But more importantly, functions can be stored as variables, used as arguments to other functions, returned from functions etc.
 
 {% capture my_include %}// you can specify a function
 function sum(a,b) { return a+b; };
@@ -89,7 +91,7 @@ sum(1, 2); // result: 3
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-This gives JavaScript some real power when used as a functional language, which has been utilised by libraries like jQuery. Again, the most usual case is callback functions - which are essential in JavaScript for handling UI events and [Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) calls.
+This gives JavaScript some real power when used as a functional language, which has been utilised by libraries like jQuery. Again, the most usual case is callback functions - which are essential in JavaScript for handling UI events.
 
 {% capture my_include %}// let’s specify a simple callback function e.g. an alert box
 function registerClick() {
@@ -109,7 +111,7 @@ link.addEventListener("click", registerClick);
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-This is usually used to add custom functionality to mouse or touch events on different areas of a web page. On the other hand, callback functions are also utilised to read data from Ajax calls to the server:
+This is usually used to add custom functionality to mouse or touch events on different areas of a web page. On the other hand, callback functions are also utilised when reading data from the server using [Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) calls:
 
 {% capture my_include %}// let's specify a simple ajax request function
 // that takes a callback function argument (therefore it's a higher order function).
@@ -156,9 +158,9 @@ incrementByThree(2); // return: 5
 
 The properties of JavaScript functions felt very familiar while learning Scala, as the Scala functions are [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). Even more precisely, everything is an object in Scala. This is one of the key properties of the language the allows for both object-oriented and functional programming styles.
 
-## Scala Functions
+## Scala functions
 
-The fact that Scala functions are objects allows for passing function references like any other object references as arguments into functions. It is also possible to store functions as variables and return function references from functions. Let's see some examples of Scala functions.
+The fact that Scala functions are objects means that we can pass function references like any other object references as arguments into functions. It is also possible to store functions as variables and return function references from functions.
 
 {% capture my_include %}// we can specify an increment function the usual way
 def increment(value: Int): Int = value + 1
