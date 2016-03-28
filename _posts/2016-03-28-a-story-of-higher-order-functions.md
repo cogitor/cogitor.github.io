@@ -1,0 +1,158 @@
+---
+title: A Story Of Higher Order Functions
+date: 2016-03-28
+tags: [c, javascript, scala, higher order functions]
+---
+
+I find higher order functions as one of the key properties of functional programming languages, as they are enabling functions to be first class citizens in a language. Per [definition](https://en.wikipedia.org/wiki/Higher-order_function) every function that takes functions as arguments and/or returns functions as results is a higher order function.
+
+<!--break-->
+
+## C Function pointers
+
+I first came across higher order functions through the usage of [function pointers](http://www.cprogramming.com/tutorial/function-pointers.html) in C, while still at the university. I have to admit that at the time I didn’t fully realise the value of passing functions as arguments to other functions. We used function pointers for the most usual case I know of - for [callback functions](https://en.wikipedia.org/wiki/Callback_(computer_programming)).
+
+Callback functions are useful when working with long-running or asynchronously executing operations (like mouse click events, HTTP requests etc.). You specify a function that will be called when the asynchronous or long-running execution finishes, and pass it as an argument to the execution:
+
+{% capture my_include %}#include <stdio.h>
+#include <string.h>
+
+// the function pointer type definition for the expected callback function
+typedef int (*callback_fp)(char * result, int result_size);
+
+// the asynchronous execution is a higher order function 
+// that takes a callback function as an argument
+int async_exec(char * data, int data_size, callback_fp callback) {
+  ...
+}
+
+// there can be multiple implementations that match the callback function definition
+int save_result(char* result, int result_size) {
+ ...
+}
+
+int print_result(char* result, int result_size) {
+  printf("data returned is %s\n", result);
+  return 0;
+}
+
+char input[9] = "some input data";
+int return_val = async_exec(input, strlen(input), print_result); // or save_result
+{% endcapture %}
+{% include code_snippet.html class="c" code=my_include %}
+
+Looking back, it really makes sense that such a capable language as C has the ability to implement both [object-oriented](http://www.planetpdf.com/codecuts/pdfs/ooc.pdf) and [functional paradigms](http://blog.charlescary.com/?p=95). You can find quite a few articles on function pointers in C and I urge you to read more if interested (e.g. [here](http://c.learncodethehardway.org/book/ex18.html)).
+
+On the other hand, higher order functions have been around from the dawn of functional programming so it’s not really a surprise that one can find them in all the usual suspects like Lisp, Haskell, Erlang, Clojure, Scala etc. It may come as a surprise to some that JavaScript, the language people love to hate, has higher order functions as well. For me, it the second language I've found higher order functions in.
+
+## JavaScript Functions
+
+JavaScript has some really interesting concepts explained really well by [Douglas Crockford](http://www.crockford.com/). All objects in Javascript are essentially maps of key-value pairs, where the values can be functions as well as other [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects):
+
+{% capture my_include %}var obj = new Object();
+obj.a = 1;
+obj.b = 2;
+obj.c = new Object(); // a nested object
+obj.sum = function() { return this.a + this.b; };
+
+obj.sum(); // result: 3
+
+
+// while you can just specify the same object as a map
+var obj = {
+  a: 1,
+  b: 2,
+  c: {},
+  sum: function() { return this.a + this.b; }
+}
+
+obj.sum(); // result: 3
+{% endcapture %}
+{% include code_snippet.html class="javascript" code=my_include %}
+
+And essentially, functions are objects as well, so one can assign key-value pairs to functions, but most importantly, functions can be stored as variables, used as arguments to other functions, returned from functions etc.
+
+{% capture my_include %}// you can specify a function
+function sum(a,b) { return a+b; };
+sum(1, 2); // result: 3
+
+// you can store a function as a variable
+var sum = function(a, b) {  return a+b; };
+sum(1, 2); // result: 3
+
+// and you can actually specify a function like an object call e.g.
+var sum = new Function(“a”, ”b”, “return a+b;”);
+sum(1, 2); // result: 3
+{% endcapture %}
+{% include code_snippet.html class="javascript" code=my_include %}
+
+This gives JavaScript some real power when used as a functional language, which has been utilised by libraries like jQuery. Again, the most usual case is callback functions:
+
+{% capture my_include %}// let’s specify a simple callback function e.g. an alert box
+function registerClick() {
+  window.alert("the link has been clicked");
+}
+
+// next, let's take a DOM element
+var link = document.getElementById("myLink");
+
+// the DOM API specifies the addEventListener function
+// the addEventListener function is a higher order function 
+// that takes a callback function as an argument
+// and adds it to the event listener of the DOM element
+link.addEventListener("click", registerClick);
+
+// this would execute the alert once we click on the link
+{% endcapture %}
+{% include code_snippet.html class="javascript" code=my_include %}
+
+Another example is for ajax requests:
+
+{% capture my_include %}// let's specify a simple ajax request function
+// which is a higher order function as it takes a callback function argument
+// so that once and if there is a result, the callback is executed with the returned data
+function ajax_request(url, callback) {
+  var httpRequest = new XMLHttpRequest(); // doesn't work for IE6
+  httpRequest.onreadystatechange = function() {
+    if (httpRequest.status === 200) callback(httpRequest.response);
+  }
+  httpRequest.open("GET", url);
+  httpRequest.send();
+}
+
+// next we have a simple callback function
+// that prints to the developer console
+function response_callback(data) {
+  console.log(data);
+}
+
+// and finally, executing the requests should print the result in the console 
+ajax_request("/", response_callback);
+{% endcapture %}
+{% include code_snippet.html class="javascript" code=my_include %}
+
+But higher order functions can also return functions, not just take functions as arguments. This is pretty simple to do in JavaScript:
+
+{% capture my_include %}// a higher order function that creates an incrementer function
+var getIncrementer = function(incrementBy) {
+  return function(x) { 
+   return x + incrementBy; // the body of the returned function
+  };
+}
+
+// by passing different arguments one can have different
+// incrementers e.g. to increment by one or any other value
+var incrementByOne = getIncrementer(1);
+incrementByOne(2); // return: 3
+
+var incrementByThree = getIncrementer(3);
+incrementByThree(2); // return: 5
+{% endcapture %}
+{% include code_snippet.html class="javascript" code=my_include %}
+
+These properties of JavaScript functions felt very familiar while learning Scala, as the Scala functions are [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). Even more precisely, everything is an object in Scala. This is one of the key properties of the language the allows for both object-oriented and functional programming styles.
+
+## Scala Functions
+
+Scala functions being objects allows for passing function references like any other object references as arguments into other functions. It is also possible to store functions as variables (or values), return function references from functions etc. Let's see some examples.
+
