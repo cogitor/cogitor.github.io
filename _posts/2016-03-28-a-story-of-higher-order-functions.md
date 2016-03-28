@@ -211,4 +211,4 @@ list.foreach(element => System.out.print(element + " ")) // prints: 1 2 4 8
 
 Higher order functions are an integral part of Scala, baked into some of the most important features. I believe they are essential for understanding not only Scala, but functional programming in general. They can be utilised to implement an asynchronous programming model (like what we've seen with callback functions in C and JavaScript), as well as used for many other use cases.
 
-Together with other functional paradigms, they enable writing a more stateless, immutable and side-effect-free code, which can improve code reliability and parallelizability. In my opinion, when used correctly, higher order functions also lead to a more concise and readable code.
+Together with other functional paradigms, they enable writing a more stateless, immutable and side-effect-free code, which can improve code reliability and parallelizability.
