@@ -12,7 +12,7 @@ I find higher order functions as one of the key properties of functional program
 
 I first came across higher order functions through the usage of [function pointers](http://www.cprogramming.com/tutorial/function-pointers.html) in C, while still at the university. I have to admit that at the time I didn’t fully realise the value of passing functions as arguments to other functions. We used function pointers for the most usual case I know of - for [callback functions](https://en.wikipedia.org/wiki/Callback_(computer_programming)).
 
-Callback functions are useful when working with long-running or asynchronously executing operations (like mouse click events, HTTP requests etc.). You specify a function that will be called when the asynchronous or long-running execution finishes, and pass it as an argument to the execution:
+Callback functions are useful when working with long-running or asynchronously executing operations (like mouse click events, HTTP requests etc.). They allow for asynchronous programming. You can specify a function that will be called when the asynchronous or long-running execution finishes, and pass it as an argument to the execution. In the meantime, you can continue on with other code execution, without the need to block while waiting for results.
 
 {% capture my_include %}#include <stdio.h>
 #include <string.h>
@@ -37,7 +37,10 @@ int print_result(char* result, int result_size) {
 }
 
 char input[9] = "some input data";
-int return_val = async_exec(input, strlen(input), print_result); // or save_result
+int started = async_exec(input, strlen(input), print_result); // or save_result
+if (started > 0) {
+  some_other_code(..);
+}
 {% endcapture %}
 {% include code_snippet.html class="c" code=my_include %}
 
@@ -86,7 +89,7 @@ sum(1, 2); // result: 3
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-This gives JavaScript some real power when used as a functional language, which has been utilised by libraries like jQuery. Again, the most usual case is callback functions:
+This gives JavaScript some real power when used as a functional language, which has been utilised by libraries like jQuery. Again, the most usual case is callback functions - which are essential in JavaScript for handling UI events and [Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) calls:
 
 {% capture my_include %}// let’s specify a simple callback function e.g. an alert box
 function registerClick() {
@@ -106,7 +109,7 @@ link.addEventListener("click", registerClick);
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-Another example is for ajax requests:
+Let's see an example for Ajax:
 
 {% capture my_include %}// let's specify a simple ajax request function
 // which is a higher order function as it takes a callback function argument
@@ -131,7 +134,7 @@ ajax_request("/", response_callback);
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-But higher order functions can also return functions, not just take functions as arguments. This is pretty simple to do in JavaScript:
+All of these examples are showcasing higher order functions that take functions as arguments. But higher order functions can also return functions. This is pretty simple to do in JavaScript:
 
 {% capture my_include %}// a higher order function that creates an incrementer function
 var getIncrementer = function(incrementBy) {
@@ -150,9 +153,30 @@ incrementByThree(2); // return: 5
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-These properties of JavaScript functions felt very familiar while learning Scala, as the Scala functions are [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). Even more precisely, everything is an object in Scala. This is one of the key properties of the language the allows for both object-oriented and functional programming styles.
+The properties of JavaScript functions felt very familiar while learning Scala, as the Scala functions are [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). Even more precisely, everything is an object in Scala. This is one of the key properties of the language the allows for both object-oriented and functional programming styles.
 
 ## Scala Functions
 
-Scala functions being objects allows for passing function references like any other object references as arguments into other functions. It is also possible to store functions as variables (or values), return function references from functions etc. Let's see some examples.
+Scala functions being objects allow for passing function references like any other object references as arguments into functions. It is also possible to store functions as variables (or values) and return function references from functions. Let's see some examples.
 
+{% capture my_include %}// we can specify an increment function the usual way
+def increment(value: Int): Int = value + 1
+
+// but it is also possible to specify a function as an object,
+// with the apply function containing the function body
+val increment = new Function1[Int,Int] {
+  override def apply(value: Int): Int = value + 1
+}
+
+// the type of increment is a Function1[Int,Int] 
+// i.e. a function with one argument of type Int and a return value of type Int
+// the shorthand notation, more normally seen, is (Int => Int)
+
+// and just for fun, we can also use a more cryptic shorthand notation
+val increment: (Int => Int) = _ + 1 // the underscore operator is a placeholder for the parameter
+{% endcapture %}
+{% include code_snippet.html class="scala" code=my_include %}
+
+... a nice useful example ...
+
+Higher order functions are an integral part of Scala, baked into some of the most important features. I believe they are essential not only to understand Scala, but functional programming in general. They can be utilised to implement an asynchronous programming model, like we've seen with callback functions in C and JavaScript, but there are many other use cases. Together with other functional paradigms they enable you to write more stateless, immutable and side-effect free code. Thus improve your coding style.
