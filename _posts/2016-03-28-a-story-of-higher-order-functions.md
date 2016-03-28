@@ -115,7 +115,7 @@ This is usually used to add custom functionality to mouse or touch events on dif
 
 {% capture my_include %}// let's specify a simple ajax request function
 // that takes a callback function argument (therefore it's a higher order function).
-// once, and if there is a valid response from the server, 
+// if there is a valid response from the server, 
 // the callback is executed with the returned data
 function ajax_request(url, callback) {
   var httpRequest = new XMLHttpRequest(); // doesn't work for IE6
@@ -156,11 +156,11 @@ incrementByThree(2); // return: 5
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-The properties of JavaScript functions felt very familiar while learning Scala, as the Scala functions are [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). Even more precisely, everything is an object in Scala. This is one of the key properties of the language the allows for both object-oriented and functional programming styles.
+The properties of JavaScript functions felt very familiar while learning Scala, as the Scala functions are [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). To be more precise, everything is an object in Scala. This is one of the key properties of the language the allows for both object-oriented and functional programming styles.
 
 ## Scala functions
 
-The fact that Scala functions are objects means that we can pass function references like any other object references as arguments into functions. It is also possible to store functions as variables and return function references from functions.
+As Scala functions are actually objects, we can pass function references like any other object references as arguments into functions. It is also possible to store functions as variables and return function references from functions.
 
 {% capture my_include %}// we can specify an increment function the usual way
 def increment(value: Int): Int = value + 1
