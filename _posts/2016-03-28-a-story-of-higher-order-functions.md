@@ -4,7 +4,7 @@ date: 2016-03-28
 tags: [c, javascript, scala, higher order functions]
 ---
 
-I find higher order functions as one of the key properties of functional programming languages, as they are enabling functions to be first class citizens in a language. Per [definition](https://en.wikipedia.org/wiki/Higher-order_function) every function that takes functions as arguments and/or returns functions as results is a higher order function.
+I find higher order functions as one of the key properties of functional programming languages, as they are enabling functions to be first class values in a language. Per [definition](https://en.wikipedia.org/wiki/Higher-order_function) every function that takes functions as arguments and/or returns functions as results is a higher order function.
 
 <!--break-->
 
@@ -83,13 +83,13 @@ sum(1, 2); // result: 3
 var sum = function(a, b) {  return a+b; };
 sum(1, 2); // result: 3
 
-// and you can actually specify a function like an object call e.g.
+// and you can actually specify a function like an object call
 var sum = new Function(“a”, ”b”, “return a+b;”);
 sum(1, 2); // result: 3
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-This gives JavaScript some real power when used as a functional language, which has been utilised by libraries like jQuery. Again, the most usual case is callback functions - which are essential in JavaScript for handling UI events and [Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) calls:
+This gives JavaScript some real power when used as a functional language, which has been utilised by libraries like jQuery. Again, the most usual case is callback functions - which are essential in JavaScript for handling UI events and [Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) calls.
 
 {% capture my_include %}// let’s specify a simple callback function e.g. an alert box
 function registerClick() {
@@ -109,11 +109,12 @@ link.addEventListener("click", registerClick);
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-Let's see an example for Ajax:
+This is usually used to add custom functionality to mouse or touch events on different areas of a web page. On the other hand, callback functions are also utilised to read data from Ajax calls to the server:
 
 {% capture my_include %}// let's specify a simple ajax request function
-// which is a higher order function as it takes a callback function argument
-// so that once and if there is a result, the callback is executed with the returned data
+// that takes a callback function argument (therefore it's a higher order function).
+// once, and if there is a valid response from the server, 
+// the callback is executed with the returned data
 function ajax_request(url, callback) {
   var httpRequest = new XMLHttpRequest(); // doesn't work for IE6
   httpRequest.onreadystatechange = function() {
@@ -123,13 +124,13 @@ function ajax_request(url, callback) {
   httpRequest.send();
 }
 
-// next we have a simple callback function
+// let's use a simple callback function
 // that prints to the developer console
 function response_callback(data) {
   console.log(data);
 }
 
-// and finally, executing the requests should print the result in the console 
+// finally, executing the requests should print the result in the console 
 ajax_request("/", response_callback);
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
@@ -157,7 +158,7 @@ The properties of JavaScript functions felt very familiar while learning Scala, 
 
 ## Scala Functions
 
-Scala functions being objects allow for passing function references like any other object references as arguments into functions. It is also possible to store functions as variables (or values) and return function references from functions. Let's see some examples.
+The fact that Scala functions are objects allows for passing function references like any other object references as arguments into functions. It is also possible to store functions as variables and return function references from functions. Let's see some examples of Scala functions.
 
 {% capture my_include %}// we can specify an increment function the usual way
 def increment(value: Int): Int = value + 1
@@ -165,18 +166,43 @@ def increment(value: Int): Int = value + 1
 // but it is also possible to specify a function as an object,
 // with the apply function containing the function body
 val increment = new Function1[Int,Int] {
+  // the apply function will be executed if we call e.g. increment(3)
   override def apply(value: Int): Int = value + 1
 }
 
-// the type of increment is a Function1[Int,Int] 
+// the type of the increment object is Function1[Int,Int] 
 // i.e. a function with one argument of type Int and a return value of type Int
 // the shorthand notation, more normally seen, is (Int => Int)
 
-// and just for fun, we can also use a more cryptic shorthand notation
-val increment: (Int => Int) = _ + 1 // the underscore operator is a placeholder for the parameter
+// we can also use a more shorthand notation to define the increment function
+val increment = (value: Int) => value + 1
+
+// and just for fun, we can also use an even more cryptic notation
+// where we would need to specify the function type (Int => Int) for the compiler
+val increment: (Int => Int) = _ + 1 // the underscore operator is a placeholder for the argument, as we didn't specify an argument name
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-... a nice useful example ...
+There are many use cases of higher order functions in Scala. One of them is to execute a function for each element of a collection:
 
-Higher order functions are an integral part of Scala, baked into some of the most important features. I believe they are essential not only to understand Scala, but functional programming in general. They can be utilised to implement an asynchronous programming model, like we've seen with callback functions in C and JavaScript, but there are many other use cases. Together with other functional paradigms they enable you to write more stateless, immutable and side-effect free code. Thus improve your coding style.
+{% capture my_include %}// let's introduce a list of integers
+val list = List(1,2,4,8)
+
+// we could specify a function to print an integer value
+def print(element: Int) = System.out.print(element + " ")
+
+// collections like lists have a foreach function
+// which is a nice example of higher order functions.
+// we can use it to print out all the values of a list
+list.foreach(print) // prints: 1 2 4 8
+
+// of course, we don't need to specify a separate print function. 
+// we can simplify things by calling the foreach function
+// with an anonymous function that does the same
+list.foreach(element => System.out.print(element + " ")) // prints: 1 2 4 8
+{% endcapture %}
+{% include code_snippet.html class="scala" code=my_include %}
+
+Higher order functions are an integral part of Scala, baked into some of the most important features. I believe they are essential not only to understand Scala, but functional programming in general. They can be utilised to implement an asynchronous programming model, like we've seen with callback functions in C and JavaScript, but there are many other use cases.
+
+Together with other functional paradigms they enable writing more stateless, immutable and side-effect free code. Which can improve code reliability and parallelizability. In my opinion, when used correctly, it can lead to more concise and readable code as well.
