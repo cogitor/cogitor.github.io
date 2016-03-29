@@ -4,13 +4,14 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-74421484-1', 'auto');
+  // create a default google tracker with a site speed sample rate of 10%
+  ga('create', 'UA-74421484-1', 'auto', 't0', {'siteSpeedSampleRate': 10});
   ga('send', 'pageview');
 </script>
 <script>
 /**
 * Function that tracks a click on an outbound link in Analytics
-* This function works with a target = _blank links
+* This function works with target = _blank links
 */
 var trackOutboundLink = function(url) {
    ga('send', 'event', 'outbound', 'click', url, {});
