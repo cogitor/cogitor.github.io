@@ -141,19 +141,19 @@ ajax_request("/", response_callback);
 
 All of these examples showcase higher order functions that take functions as arguments. But higher order functions can also return functions. This is pretty simple to do in JavaScript:
 
-{% capture my_include %}// a higher order function that creates an incrementer function
-var getIncrementer = function(incrementBy) {
+{% capture my_include %}// a higher order function that creates an increment function
+var buildIncrementFunction = function(incrementBy) {
   return function(x) { 
    return x + incrementBy; // the body of the returned function
   };
 }
 
 // by passing different arguments one can have different
-// incrementers e.g. to increment by one or any other value
-var incrementByOne = getIncrementer(1);
+// increment functions e.g. to increment by one or any other value
+var incrementByOne = buildIncrementFunction(1);
 incrementByOne(2); // return: 3
 
-var incrementByThree = getIncrementer(3);
+var incrementByThree = buildIncrementFunction(3);
 incrementByThree(2); // return: 5
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
@@ -206,9 +206,15 @@ list.foreach(print) // prints: 1 2 4 8
 // we can simplify things by calling the foreach function
 // with an anonymous function that does the same
 list.foreach(element => System.out.print(element + " ")) // prints: 1 2 4 8
+
+// Note: the foreach function is great example of a higher order function,
+// and we used printing to showcase a simle use case
+// however, there are better ways to print elements of a function e.g.
+// System.out.print(" ".join(list)) where we print a string value created 
+// by joining all the elements of the list
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
 Higher order functions are an integral part of Scala, baked into some of the most important features. I believe they are essential for understanding not only Scala, but functional programming in general. They can be utilised to implement an asynchronous programming model (like what we've seen with callback functions in C and JavaScript), as well as used for many other use cases.
 
-Together with other functional paradigms, they enable writing a more stateless, immutable and side-effect-free code, which can improve code reliability and parallelizability.
+Together with other functional paradigms, they can improve code reliability and parallelizability by enabling you to write a more stateless and side-effect-free code.
