@@ -119,7 +119,22 @@ if (result.nonEmpty) {
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-In the Scala implementation there are actually two types that inherit from Option: Some and None. Calling Option(value) is actually checking if the value is null and instantiating Some(value). So it's more less a matter of style if you prefer calling the Option methods or directly instantiating Some and None.
+In the Scala implementation there are actually two types that inherit from Option: Some and None. Calling Option(value) is actually checking if the value is null and instantiating Some(value). So it's slightly safer to use Option instead of Some, but in this particular case it wouldn't make a difference.
+
+Edit: As mentioned in the comments, Scala offers [many more idiomatic ways](http://blog.originate.com/blog/2014/06/15/idiomatic-scala-your-options-do-not-match/) of using Options, and I recommend you to explore them. For instance, one way to write the same code as above would be using the fold method:
+
+{% capture my_include %}// let's extract the handling of the missing value for better readability
+def handleMissingValue() {
+  // log and raise metrics
+  // or throw an exception
+}
+
+val result: Option[Result] = calculation.getResult
+// the first argument is an expression that evaluates in case of None (usually a default value)
+// the second argument is an expression that should be executed if there is a value
+result.fold( handleMissingValue() )( res => res.doSomeWork() )
+{% endcapture %}
+{% include code_snippet.html class="scala" code=my_include %}
 
 ## When should I not use Options?
 
