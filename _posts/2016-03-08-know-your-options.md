@@ -121,7 +121,7 @@ if (result.nonEmpty) {
 
 In the Scala implementation there are actually two types that inherit from Option: Some and None. Calling Option(value) is actually checking if the value is null and instantiating Some(value). So it's slightly safer to use Option instead of Some, but in this particular case it wouldn't make a difference.
 
-Edit: As mentioned in the comments, Scala offers [many more idiomatic ways](http://blog.originate.com/blog/2014/06/15/idiomatic-scala-your-options-do-not-match/) of using Options, and I recommend you to explore them. For instance, one way to write the same code as above would be using the fold method:
+**Edit**: As mentioned in the comments, Scala offers [many more idiomatic ways](http://blog.originate.com/blog/2014/06/15/idiomatic-scala-your-options-do-not-match/) of using Options, and I recommend you to explore them. For instance, one way to write the same code as above would be using the fold method:
 
 {% capture my_include %}// let's extract the handling of the missing value for better readability
 def handleMissingValue() {
