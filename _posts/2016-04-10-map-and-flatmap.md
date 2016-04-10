@@ -51,7 +51,8 @@ val list = List(List(1, 2), List(4, 8), List())
 // let us use the previously defined increment function again
 def increment(value: Int): Int = value + 1
 
-// calling flatMap should result in the map functions executed on the sublists List(1, 2) and List(4, 8)
+// calling flatMap should result in the map functions executed 
+// on the sublists List(1, 2) and List(4, 8)
 // followed by a flatten
 val result = list.flatMap(subList => subList.map(increment))
 // returns: List(2, 3, 5, 9)
@@ -71,7 +72,7 @@ Map and flatMap functions exist in other classes as well, not just collections. 
 
 I talked about Scala Options [before](/posts/2016/03/08/know-your-options) but I didn't mention how useful map and flatMap functions are with the Option container.
 
-Take, for instance, the map function. Calling the map function on a Option (which can be either a `Some(value)` or `None`) will execute the function only if the value is an instance of `Some`. So we can use this to conditionally execute a function without handling the `None` case.
+Take, for instance, the map function. Calling the map function on an Option (which can be either a `Some(value)` or `None`) will execute the function only if the value is an instance of `Some`. So we can use this to conditionally execute a function without handling the `None` case.
 
 {% capture my_include %}// let's re-introduce an optional result with the type of Option[Result]
 // which can either have the value of Some(Result) or None
@@ -110,7 +111,7 @@ I will not get into [Try](http://danielwestheide.com/blog/2012/12/26/the-neophyt
 
 There is a nice syntactic sugar in Scala that allows us to combine map and flatMap functions in a more readable way, using [for comprehensions](http://debasishg.blogspot.ie/2008/03/monads-another-way-to-abstract.html).
 
-We can explain it using the above example and Options:
+It can be explained using the above example and Options:
 
 {% capture my_include %}// let's use a list of integers from the example above
 val list = List(1, 2, 4, 8)
