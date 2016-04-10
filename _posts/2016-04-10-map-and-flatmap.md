@@ -70,7 +70,7 @@ I wouldn't dive deeper into the theory as I have only started scratching the sur
 
 Map and flatMap functions exist in other classes as well, not just collections. A good example are container classes like [Option](http://www.scala-lang.org/api/current/index.html#scala.Option), [Future](http://www.scala-lang.org/api/current/#scala.concurrent.Future) and [Try](http://www.scala-lang.org/api/current/index.html#scala.util.Try). And we can implement them for our own classes as well.
 
-I've blogged about Scala Options [before](/posts/2016/03/08/know-your-options) but I didn't mention how useful map and flatMap functions are with the Option container.
+I've written about Scala Options [before](/posts/2016/03/08/know-your-options) but I didn't mention how useful map and flatMap functions are with the Option container.
 
 Take, for instance, the map function. Calling the map function on an Option (which can be either a `Some(value)` or `None`) will execute the function only if the value is an instance of `Some`. So we can use this to conditionally execute a function without handling the `None` case.
 
