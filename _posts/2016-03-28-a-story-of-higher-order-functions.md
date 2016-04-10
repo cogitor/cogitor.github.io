@@ -215,6 +215,8 @@ list.foreach(element => System.out.print(element + " ")) // prints: 1 2 4 8
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
+**Edit**: Other more notable higher order functions on collections would be [map and flatMap](http://www.brunton-spall.co.uk/post/2011/12/02/map-map-and-flatmap-in-scala/). There is a lot written about them already and I've decided to dedicate a [separate blog post](/posts/2016/04/10/map-and-flatmap) to them as well.
+
 Higher order functions are an integral part of Scala, baked into some of the most important features. I believe they are essential for understanding not only Scala, but functional programming in general. They can be utilised to implement an asynchronous programming model (like what we've seen with callback functions in C and JavaScript), as well as used for many other use cases.
 
 Together with other functional paradigms, they can improve code reliability and parallelizability by enabling you to write a more stateless and side-effect-free code.

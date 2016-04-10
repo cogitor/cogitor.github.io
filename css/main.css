@@ -176,10 +176,12 @@ ul.posts li, ul.latest li {
     padding-left: 10px;
     overflow: hidden;
     padding-bottom: 20px;
+    max-width: 500px;
 }
 
 .tag_box li {
     line-height: 28px;
+    padding-bottom: 6px;
 }
 
 .tag_box li i {
