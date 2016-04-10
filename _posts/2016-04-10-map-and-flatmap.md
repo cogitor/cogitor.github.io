@@ -43,7 +43,7 @@ val result: List[Int] = listOfLists.flatten
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-Therefore, flatmap would execute the transformation function on each list element of the listOfLists and return a single flattened list with all the transformed elements.
+Therefore, flatmap would execute the transformation function on each list element of the `listOfLists` and return a single flattened list with all the transformed elements.
 
 {% capture my_include %}// if we have the same list of lists of integers
 val list = List(List(1, 2), List(4, 8), List())
@@ -71,7 +71,7 @@ Map and flatMap functions exist in other classes as well, not just collections. 
 
 I talked about Scala Options [before](/posts/2016/03/08/know-your-options) but I didn't mention how useful map and flatMap functions are with the Option container.
 
-Take, for instance, the map function. Calling the map function on a Option instance (which can be either a `Some(value)` or `None`) will execute the function only if the value is an instance of `Some`. So we can use this to conditionally execute a function without handling the None instance.
+Take, for instance, the map function. Calling the map function on a Option (which can be either a `Some(value)` or `None`) will execute the function only if the value is an instance of `Some`. So we can use this to conditionally execute a function without handling the `None` case.
 
 {% capture my_include %}// let's re-introduce an optional result with the type of Option[Result]
 // which can either have the value of Some(Result) or None
