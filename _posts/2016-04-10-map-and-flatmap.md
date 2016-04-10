@@ -5,7 +5,7 @@ tags: [scala, higher order functions, map, flatmap, for comprehension]
 image: /assets/scala_code.jpg
 ---
 
-I've been talking about higher order functions in my [last post](/posts/2016/03/28/a-story-of-higher-order-functions) and I've mentioned their importance in Scala, but I didn't want to digress too much. Now it's time to introduce two great examples of higher order functions, [map and flatMap](http://www.brunton-spall.co.uk/post/2011/12/02/map-map-and-flatmap-in-scala/). Map and flatMap are implemented for all collection types in the Scala collection library. They are quite significant functions in Scala, and functional programming in general, so they rightfully deserve their own post.
+I've been writing about higher order functions in my [last post](/posts/2016/03/28/a-story-of-higher-order-functions) and I've mentioned their importance in Scala, but I didn't want to digress too much. Now it's time to introduce two great examples of higher order functions, [map and flatMap](http://www.brunton-spall.co.uk/post/2011/12/02/map-map-and-flatmap-in-scala/). Map and flatMap are implemented for all collection types in the Scala collection library. They are quite significant functions in Scala, and functional programming in general, so they rightfully deserve their own post.
 
 <!--break-->
 
@@ -70,7 +70,7 @@ I wouldn't dive deeper into the theory as I have only started scratching the sur
 
 Map and flatMap functions exist in other classes as well, not just collections. A good example are container classes like [Option](http://www.scala-lang.org/api/current/index.html#scala.Option), [Future](http://www.scala-lang.org/api/current/#scala.concurrent.Future) and [Try](http://www.scala-lang.org/api/current/index.html#scala.util.Try). And we can implement them for our own classes as well.
 
-I talked about Scala Options [before](/posts/2016/03/08/know-your-options) but I didn't mention how useful map and flatMap functions are with the Option container.
+I've blogged about Scala Options [before](/posts/2016/03/08/know-your-options) but I didn't mention how useful map and flatMap functions are with the Option container.
 
 Take, for instance, the map function. Calling the map function on an Option (which can be either a `Some(value)` or `None`) will execute the function only if the value is an instance of `Some`. So we can use this to conditionally execute a function without handling the `None` case.
 
