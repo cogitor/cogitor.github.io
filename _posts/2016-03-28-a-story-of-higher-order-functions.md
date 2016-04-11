@@ -45,7 +45,7 @@ if (started > 0) {
 {% endcapture %}
 {% include code_snippet.html class="c" code=my_include %}
 
-Looking back, it really makes sense that such a versatile language as C has the ability to implement both [object-oriented](http://www.planetpdf.com/codecuts/pdfs/ooc.pdf) and [functional](http://blog.charlescary.com/?p=95) paradigms. You can find quite a few articles on function pointers in C and I urge you to read more if interested (e.g. [here](http://c.learncodethehardway.org/book/ex18.html)).
+Looking back, it really makes sense that such a versatile language as C has the ability to implement both [object-oriented](http://www.planetpdf.com/codecuts/pdfs/ooc.pdf) and [functional](http://blog.charlescary.com/?p=95) paradigms, even tho this would be a bit impractical. You can find quite a few articles on function pointers in C and I urge you to read more if interested (e.g. [here](http://c.learncodethehardway.org/book/ex18.html)).
 
 On the other hand, higher order functions have been around from the dawn of functional programming so it’s not really unexpected to find them in all the usual suspects like Lisp, Haskell, Erlang, Clojure, Scala etc. 
 
@@ -76,7 +76,7 @@ obj.sum(); // result: 3
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-And essentially, functions are objects too. So one can assign key-value pairs to functions as well. But more importantly, functions can be stored as variables, used as arguments to other functions, returned from functions etc.
+And essentially, functions are implemented as objects too. So one can assign key-value pairs to functions as well. But more importantly, functions can be stored as variables, used as arguments to other functions, returned from functions etc.
 
 {% capture my_include %}// you can specify a function
 function sum(a,b) { return a+b; };
@@ -158,13 +158,13 @@ incrementByThree(2); // return: 5
 {% endcapture %}
 {% include code_snippet.html class="javascript" code=my_include %}
 
-Knowing the properties of JavaScript functions, I had a déjà vu while learning Scala, because Scala functions are [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). To be fair, everything is an object in Scala. This is one of the key properties of the language that allows for both object-oriented and functional programming styles.
+Knowing the properties of JavaScript functions, I had a déjà vu while learning Scala, because Scala functions are implemented as [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). This is one of the key properties of the language that allows for both object-oriented and functional programming styles.
 
 {% include responsive_image.html name="scala_code" alt="Scala code" %}
 
 ## Scala functions
 
-As Scala functions are actually objects, we can pass function references like any other object references as arguments into functions. It is also possible to store functions as variables and return function references from functions.
+As Scala functions are treated as objects, we can pass function references like any other object references as arguments into functions. It is also possible to store functions as variables and return function references from functions.
 
 {% capture my_include %}// we can specify an increment function the usual way
 def increment(value: Int): Int = value + 1
