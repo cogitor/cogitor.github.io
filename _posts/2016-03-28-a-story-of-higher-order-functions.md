@@ -3,6 +3,7 @@ title: A Story Of Higher Order Functions
 date: 2016-03-28
 tags: [c, javascript, scala, higher order functions]
 image: /assets/scala_code.jpg
+layout: post
 ---
 
 I find higher order functions to be one of the key properties of functional programming languages, as they enable functions to be first class values in a language. Per [definition](https://en.wikipedia.org/wiki/Higher-order_function), every function that takes functions as arguments and/or returns functions as results is a higher order function.

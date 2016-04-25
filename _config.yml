@@ -15,12 +15,12 @@ excerpt_separator: <!--break-->
 defaults:
   -
     scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "default"
-  -
-    scope:
       path: "posts"
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
