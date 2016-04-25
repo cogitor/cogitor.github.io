@@ -1,5 +1,5 @@
 ---
-title: Map and flatMap
+title: A Quick Look at Map and FlatMap
 date: 2016-04-10
 tags: [scala, higher order functions, map, flatmap, for comprehension]
 image: /assets/scala_code.jpg
