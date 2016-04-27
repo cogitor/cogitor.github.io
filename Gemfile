@@ -1,4 +1,3 @@
 source 'https://rubygems.org'
-gem 'github-pages'
+gem 'github-pages', '75'
 gem 'pygments.rb'
-gem 'redcarpet', '~> 3.3.3'
