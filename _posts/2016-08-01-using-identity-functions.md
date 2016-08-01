@@ -100,7 +100,7 @@ The relationship between the flatMap function and it's neutral value which is ca
 
 ## A more realistic use case
 
-Although they are very simple there are some [interesting use cases](http://benjiweber.co.uk/blog/2015/01/14/implicit-conversions-with-identity-functions/) for the identity functions. For instance, they can be useful as a default argument for transformation functions, so that depending on if the argument is passed, a transformation would be called.
+Although they are very simple, there are some [interesting use cases](http://benjiweber.co.uk/blog/2015/01/14/implicit-conversions-with-identity-functions/) for the identity functions. For instance, they can be useful as a default argument for transformation functions, so that depending on if the argument is passed, a transformation would be called.
 
 One example is parsing and converting a JSON string into a Scala object using the [play json library](https://www.playframework.com/documentation/2.5.x/ScalaJson). For instance, let's define a function for parsing and converting a JSON string:
 
@@ -137,7 +137,7 @@ parse("[5, 6, 7]").get // returns List(5, 6, 7)
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-But what if we want to be able to reuse this code for parsing another list of values, but this time for it being defined in a different place in different JSON objects? We could add an optional transformation function as an argument like:
+But what if we want to be able to reuse this function for extracting another list of values from JSON, but this time for a list being in any place in different JSON objects? We could add an optional function as an argument, so that if the function exists it's being used to find the list in the JSON object:
 
 {% capture my_include %}
 import play.api.libs.json._
