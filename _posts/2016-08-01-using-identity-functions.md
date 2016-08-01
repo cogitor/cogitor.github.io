@@ -12,7 +12,7 @@ An [Identity function](https://en.wikipedia.org/wiki/Identity_function) is a ver
 
 {% include responsive_image.html name="identity" alt="Identity" %}
 
-As explained by [Bartosz Milewski](https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/), the identity function is a neutral value in functional composition. Just like zero is a neutral value for addition, an identity function is a neutral value for some [higher order functions](/posts/2016/03/28/a-story-of-higher-order-functions). This means that if we pass an identity function f(x) into a higher order function (which as an argument expects a function that takes a single argument of type x and returns a value of type x), it would effectively have the same result as passing the value x into a regular function that takes the value x itself.
+As explained by [Bartosz Milewski](https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/), the identity function is a neutral value in functional composition. Just like zero is a neutral value for addition, an identity function is a neutral value for some [higher order functions](/posts/2016/03/28/a-story-of-higher-order-functions). This means that if we pass an identity function `f(x)` into a higher order function (which as an argument expects a function that takes a single argument of type `x` and returns a value of type `x`), it would effectively have the same result as passing the value `x` into a regular function that takes an argument of type `x`.
 
 {% capture my_include %}
 // here is a higher order function (HOF) that takes an array of bytes 
@@ -88,11 +88,11 @@ None.flatMap(x => Option(x)) // returns None
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-The collections flatMap function is more flexible than the one for Options, so it allows us to pass the identity function as an argument, but it's not the neutral value for it. Just as the neutral value for flatMap of Options is the function x => Option(x), the neutral value of the flatMap of Lists should be x => List(x).
+The collections flatMap function is more flexible than the one for Options, so it allows us to pass the identity function as an argument, but it's not the neutral value for it. Just as the neutral value for flatMap of Options is the function `x => Option(x)`, the neutral value of the flatMap of Lists should be `x => List(x)`.
 
 ## A bit of theory
 
-As mentioned before, the identity function is a neutral value for some higher order functions, namely for those that accept a function that takes a single argument of type x and return a value of type x. And the most notable of these functions is the map function.
+As mentioned before, the identity function is a neutral value for some higher order functions, namely for those that accept a function that takes a single argument of type `x` and return a value of type `x`. And the most notable of these functions is the map function.
 
 The relationship between the map and identity functions is defined in the Category Theory. [Functors](https://bartoszmilewski.com/2015/01/20/functors/), which are an important abstraction in functional programming, are defined by a map function and the identity function, such that the identity function is the neutral value for the map function. There are some really nice explanations of Functors [here](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html) and [here](http://www.russbishop.net/monoids-monads-and-functors), so I won't spend more time on them.
 
