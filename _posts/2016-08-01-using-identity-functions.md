@@ -1,7 +1,7 @@
 ---
 title: Using Identity Functions
 date: 2016-08-01
-tags: [scala, higher order functions, identity]
+tags: [scala, higher order functions, map, flatmap, identity]
 image: /assets/scala_code.jpg
 layout: post
 ---
