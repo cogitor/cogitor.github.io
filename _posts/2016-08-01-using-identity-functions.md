@@ -137,7 +137,9 @@ parse("[5, 6, 7]").get // returns List(5, 6, 7)
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-But what if we want to be able to reuse this function for extracting another list of values from JSON, but this time for a list being in any place in different JSON objects? We could add an optional function as an argument, so that if the function exists it's being used to find the list in the JSON object:
+This works well for this one particular case, but what if we want to be able to reuse this function for extracting any list of values from a JSON object, which could be in any place in different JSON objects?
+
+We could add an optional function as an argument, so that if the function exists it's being used to find the list in the JSON object:
 
 {% capture my_include %}
 import play.api.libs.json._
