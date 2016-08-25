@@ -108,6 +108,22 @@ a:hover {
     text-align: center;
 }
 
+.excerpt img {
+    max-width: 200px;
+    float: left;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+
+/* don't show the images if small screen */
+@media screen and (max-width: 600px) { 
+.excerpt img { display: none; }  
+}
+
+.excerpt .content p {
+    padding-left: 0px;
+}
+
 h1 {
     padding: 10px;
     font-size: 2.2em;
@@ -143,7 +159,7 @@ span.meta {
 }
 
 ul.posts, a.latest {
-    padding: 10px;
+    padding-top: 10px;
     font-size: 1.4em;
 }
 
@@ -157,6 +173,10 @@ ul.latest {
 
 ul.latest li {
     padding-bottom: 20px;
+}
+
+ul.latest li .excerpt {
+    padding-left: 10px;
 }
 
 ul.posts li, ul.latest li {
