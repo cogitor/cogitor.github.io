@@ -4,7 +4,7 @@ description: Emil Varga - A personal blog
 ---
 
 <ul class="latest">
-  {% for post in site.posts limit 5 %}
+  {% for post in site.posts limit:5 %}
     <li>
       <h1>{{ post.title }}</h1>
       {{ post.excerpt }}
