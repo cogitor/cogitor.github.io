@@ -4,8 +4,16 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  var lsgaid = 'ga:clientId';
   // create a default google tracker with a site speed sample rate of 10%
-  ga('create', 'UA-74421484-1', 'auto', 't0', {'siteSpeedSampleRate': 10});
+  if (window.localStorage) {
+    ga('create', 'UA-74421484-1', 'auto', 't0', {'siteSpeedSampleRate': 10, 'storage': 'none', 'clientId': localStorage.getItem(lsgaid)});
+    ga(function(tracker) {
+      localStorage.setItem(lsgaid, tracker.get('clientId'));
+    });
+  } else {
+    ga('create', 'UA-74421484-1', 'auto', 't0', {'siteSpeedSampleRate': 10});
+  }
   ga('send', 'pageview');
 </script>
 <script>
