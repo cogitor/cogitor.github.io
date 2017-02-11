@@ -6,7 +6,7 @@ image: /assets/identity.jpg
 layout: post
 ---
 
-An [Identity function](https://en.wikipedia.org/wiki/Identity_function) is a very basic function that takes one argument and the only thing it does is return the argument value. Pretty simple: `f(x) = x`. This function is important in mathematics e.g in the [Category theory](https://en.wikipedia.org/wiki/Category_theory), but is it useful in everyday programing?
+An [Identity function](https://en.wikipedia.org/wiki/Identity_function) is a very basic function that takes one argument and the only thing it does is return the argument value. Pretty simple: `f(x) = x`. This function is important in mathematics e.g in the [Category theory](https://en.wikipedia.org/wiki/Category_theory), but is it useful in everyday programming?
 
 <!--break-->
 
@@ -35,7 +35,7 @@ val dataArray = new Array[Byte](1024)
 getSize(dataArray, size => size / 1024) // returns 1
 
 // or we can call it with just an identity function x => x
-// for which, in scala, there is a shorthand function "identity"
+// for which, in Scala, there is a shorthand function "identity"
 getSize(dataArray, x => x) // returns 1024
 getSize(dataArray, identity) // returns 1024 as well
 
@@ -102,7 +102,7 @@ The relationship between the flatMap function and its neutral value, which is ca
 
 Although they are very simple, there are some [interesting use cases](http://benjiweber.co.uk/blog/2015/01/14/implicit-conversions-with-identity-functions/) of the identity functions. For instance, they can be useful as a default argument for transformation functions, so that if the argument is passed, the transformation would be executed.
 
-One example is parsing and converting a JSON string into a Scala object using the [play json library](https://www.playframework.com/documentation/2.5.x/ScalaJson). 
+One example is parsing and converting a JSON string into a Scala object using the [Play JSON library](https://www.playframework.com/documentation/2.5.x/ScalaJson).
 
 Let's define a function for parsing and converting a JSON string:
 
