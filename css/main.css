@@ -38,7 +38,7 @@ html, body {
 .footer {
     position:absolute;
     bottom:0;
-    font-size: .8em;
+    font-size: .82em;
     width: 100%;
     min-width: 320px;
 }
@@ -58,6 +58,7 @@ html, body {
 
 .footer ul.copyright {
     right:0;
+    font-size: .78em;
 }
 
 /* header settings */
