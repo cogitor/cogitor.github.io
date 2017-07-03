@@ -3,8 +3,7 @@ title: Who am I?
 description: About Emil Varga
 ---
 # {{ page.title }}
-
-I'm a software engineer at [Swrve](http://swrve.com) in Dublin, Ireland. I enjoy building web services, distributed systems, complaining about weather and working with functional languages. I especially enjoy [Scala](http://www.scala-lang.org/).
+I'm a software engineer at [Zalando](https://www.zalando.de/) in Berlin, Germany. I've recently moved from Ireland where I worked in [Swrve](http://swrve.com). I enjoy building web services, distributed systems, complaining about weather and working with functional languages. I especially enjoy [Scala](http://www.scala-lang.org/).
 
 <!--break-->
 
