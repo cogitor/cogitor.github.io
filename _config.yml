@@ -25,3 +25,8 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+
+plugins:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
