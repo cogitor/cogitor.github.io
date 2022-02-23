@@ -2,7 +2,7 @@
 layout: default
 ---
 <h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }} | {{ page.tags | reversed | join: ', ' }}</p>
+<p class="meta"> topics: <i>{{ page.tags | reversed | join: ', ' }}</i></p>
 <div class="post">
   {{ content }}
   {% include share.html %}

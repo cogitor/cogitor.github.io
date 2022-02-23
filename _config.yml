@@ -6,6 +6,7 @@ author:
   twitter: emvar
   linkedin: emilvarga
 
+url: https://emilvarga.com
 image: https://emilvarga.com/assets/typing.jpg
 permalink: /posts/:year/:month/:day/:title
 production_url: https://emilvarga.com
