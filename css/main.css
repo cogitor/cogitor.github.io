@@ -71,6 +71,7 @@ html, body {
     padding: 0px;
     list-style: none;
     font-weight: bold;
+    overflow: hidden;
 }
 .header nav ul li {
     display: inline;
@@ -79,9 +80,37 @@ html, body {
 
 .header .home {
     font-size: 1.2em;
-    fint-weight: bold;
+    font-weight: bold;
     padding-left: 20px;
 }
+
+/* search  */
+
+@media (orientation:portrait) {
+    .search {
+       display: none; /* visibility: none; */
+    }
+ }
+
+ @media (orientation:landscape) and (max-width: 767px) {
+    .search {
+       display: none; /* visibility: none; */
+    }
+ }
+
+.header .search {
+    float: right;
+}
+
+.header input[type="text"] {
+    float: right;
+    border: none;
+    max-width: 200px;
+    font-size: 17px;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
 
 /* link settings */
 a {
