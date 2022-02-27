@@ -224,3 +224,135 @@ ul.posts li, ul.latest li {
 .share a:hover {
     color: #999;
 }
+
+/*google fonts*/
+/* latin-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVIGxA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  /* highlight */
+  /* based on grayscale.css */
+
+.hljs {
+    display: block;
+    background: #FFF;
+    color: #111;
+    font-family: Menlo, Monaco, Consolas, monospace;
+    line-height: 1.4em;
+    overflow-x: auto;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    white-space: pre-wrap;
+  }
+  
+  code.highlighter-rouge {
+    text-decoration: none;
+    font-style: italic;
+    color: #111;
+    font-family: 'Open Sans', Helvetica, Arial, monospace;
+  }
+  
+  .hljs-tag {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .hljs-meta {
+    color: #999;
+    font-weight: bold;
+  }
+  
+  .hljs-comment,
+  .hljs-quote {
+    color: #999;
+    font-style: italic;
+  }
+  
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-subst {
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .hljs-number,
+  .hljs-literal {
+    color: #777;
+  }
+  
+  .hljs-string,
+  .hljs-doctag,
+  .hljs-formula {
+    color: #333;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQIW2O8e/fufwYGBgZBQUEQxcCIIfDu3Tuwivfv30NUoAsAALHpFMMLqZlPAAAAAElFTkSuQmCC) repeat;
+  }
+  
+  .hljs-title,
+  .hljs-section,
+  .hljs-selector-id {
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .hljs-subst {
+    font-weight: normal;
+  }
+  
+  .hljs-class .hljs-title,
+  .hljs-type,
+  .hljs-name {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .hljs-regexp {
+      color: #333;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAN37979r6yszIgujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQDexSef15DBCwAAAABJRU5ErkJggg==) repeat;
+  }
+  
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-link {
+    color: #000;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAO7d+/+z4gsBhJwdXVlhAvCBECKwIIwAbhKZBUwBQA6hBpm5efZsgAAAABJRU5ErkJggg==) repeat;
+  }
+  
+  .hljs-built_in,
+  .hljs-builtin-name {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  .hljs-deletion {
+    color: #fff;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAE0lEQVQIW2MMDQ39zzhz5kwIAQAyxweWgUHd1AAAAABJRU5ErkJggg==) repeat;
+  }
+  
+  .hljs-addition {
+    color: #000;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAALUlEQVQYV2N89+7dfwYk8P79ewZBQUFkIQZGOiu6e/cuiptQHAPl0NtNxAQBAM97Oejj3Dg7AAAAAElFTkSuQmCC) repeat;
+  }
+  
+  .hljs-emphasis {
+    font-style: italic;
+  }
+  
+  .hljs-strong {
+    font-weight: bold;
+  }
