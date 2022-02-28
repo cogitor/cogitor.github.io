@@ -9,12 +9,14 @@
       <div class="body">
         {{content}}
       </div>
-      <script>hljs.highlightAll();</script>
       <div class="footer">
         {% include footer.html %}
       </div>
     </div>
   </body>
+  <script>document.addEventListener('DOMContentLoaded', (e) => {
+    hljs.highlightAll();
+   });</script>
   <!-- load css lazily here-->
   <!--icons-->
   {% include lazy_css.html css_path='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' %}
