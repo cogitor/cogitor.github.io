@@ -1,10 +1,27 @@
-<div id="disqus_thread"></div>
+{% capture page_url %}{{ site.production_url }}{{page.url}}{% endcapture %}
+{% assign title = page.title | cgi_escape %}
+<div id="disqus_thread" post-id="{{title}}" post-url='{{page_url}}'></div>
+
 <script>
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'https://emvar.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+var commentsLoaded = false;
+var element = document.getElementById('disqus_thread');
+if (element) {
+    window.addEventListener('scroll', function (e) {
+	var currentScroll = document.scrollingElement.scrollTop;
+
+	if (!commentsLoaded && (currentScroll > element.getBoundingClientRect().top - 100)) {
+		commentsLoaded = true;
+
+        window.disqus_config = function () {
+            this.page.url = element.getAttribute('post-url');
+            this.page.identifier = element.getAttribute('post-id');
+        };
+	
+        var d = document, s = d.createElement('script');
+        s.src = 'https://emvar.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+	}
+}, false);
+}
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
