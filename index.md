@@ -1,6 +1,6 @@
 ---
 title: Emil Varga
-description: Emil Varga - A personal blog
+description: A personal blog. Posts on various topics including Scala, functional programming and writing blogs with Jekyll. 
 ---
 
 <ul class="latest">
