@@ -2,7 +2,7 @@
 layout: null
 title : Sitemap
 ---
-{% for page in site.pages %}{% if page.url contains 'tags' %}{% comment %}Do nothing{% endcomment %}{% else %}
-{{site.production_url}}{{ page.url }}{% endif %}{% endfor %}
+{% for page in site.pages %}{% unless site.ignore_by_sitemap contains page.url %}
+{{site.production_url}}{{ page.url }}{% endunless %}{% endfor %}
 {% for post in site.posts %}
 {{site.production_url}}{{ post.url }}{% endfor %}
