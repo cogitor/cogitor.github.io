@@ -21,7 +21,7 @@ ignore_by_sitemap:
   - /sitemap.txt
   - /sitemap.xml
   - /rss.xml
-  - /robot.txt
+  - /robots.txt
 
 defaults:
   -
