@@ -4,6 +4,10 @@ date: 2016-02-27
 tags: [jekyll, github pages]
 layout: post
 description: Here we go! Coming late to the game but I'm finally diving into setting up a website on Github Pages. It's super fun and pretty simple to set up.
+sitemap:
+  lastmod: 2022-03-03
+  priority: 0.3
+  changefreq: 'yearly'
 ---
 
 Here we go! Coming late to the game but I'm finally diving into setting up a website on Github Pages. It's super fun and pretty simple to set up.

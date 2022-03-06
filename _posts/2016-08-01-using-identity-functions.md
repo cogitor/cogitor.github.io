@@ -5,6 +5,10 @@ tags: [scala, higher order functions, map, flatmap, identity]
 image: /assets/identity.jpg
 layout: post
 description: An Identity function is a very basic function that takes one argument and the only thing it does is return the argument value. It's important in mathematics, but is it useful in everyday programming?
+sitemap:
+  lastmod: 2022-03-03
+  priority: 0.6
+  changefreq: 'yearly'
 ---
 
 An [Identity function](https://en.wikipedia.org/wiki/Identity_function) is a very basic function that takes one argument and the only thing it does is return the argument value. Pretty simple: `f(x) = x`. This function is important in mathematics e.g in the [Category theory](https://en.wikipedia.org/wiki/Category_theory), but is it useful in everyday programming?

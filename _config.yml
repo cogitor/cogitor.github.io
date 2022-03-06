@@ -19,7 +19,9 @@ ignore_by_sitemap:
   - /tags/
   - /assets/css/style.css
   - /sitemap.txt
+  - /sitemap.xml
   - /rss.xml
+  - /robot.txt
 
 defaults:
   -
