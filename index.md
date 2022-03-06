@@ -1,8 +1,8 @@
 ---
-title: Emil Varga
-description: A personal blog. Posts on various topics including Scala, functional programming and writing blogs with Jekyll.
+title: Emil Varga - A personal blog.
+description: Posts on various topics including Scala, functional programming and writing blogs with Jekyll.
 sitemap:
-  lastmod: 2022-03-03
+  lastmod: 2022-03-06
   priority: 0.8
   changefreq: 'monthly'
 ---
