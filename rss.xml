@@ -1,6 +1,10 @@
 ---
 layout: null
 title : RSS Feed
+sitemap:
+  lastmod: 2022-03-03
+  priority: 0.1
+  changefreq: 'monthly'
 ---
 
 <?xml version="1.0" encoding="UTF-8" ?>

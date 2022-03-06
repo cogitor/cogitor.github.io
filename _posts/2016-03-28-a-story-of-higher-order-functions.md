@@ -5,6 +5,10 @@ tags: [c, javascript, scala, higher order functions]
 image: /assets/scala_code.jpg
 layout: post
 description: I find higher order functions to be one of the key properties of functional programming languages, as they enable functions to be first class values in a language. This is how I learned about them.
+sitemap:
+  lastmod: 2022-03-03
+  priority: 0.5
+  changefreq: 'yearly'
 ---
 
 I find higher order functions to be one of the key properties of functional programming languages, as they enable functions to be first class values in a language. Per [definition](https://en.wikipedia.org/wiki/Higher-order_function), every function that takes functions as arguments and/or returns functions as results is a higher order function.

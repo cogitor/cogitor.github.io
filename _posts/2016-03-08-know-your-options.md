@@ -3,6 +3,10 @@ title: Know Your Options
 date: 2016-03-08
 tags: [java, scala, options]
 layout: post
+sitemap:
+  lastmod: 2022-03-03
+  priority: 0.5
+  changefreq: 'yearly'
 ---
 
 Are you having troubles with Null Pointer Exceptions (NPEs)? Do you find it cumbersome to defend against them every few lines of code? If you're not doing it already, you should probably try using Optionals in Java. Also known as Options in Scala.

@@ -1,6 +1,10 @@
 ---
 title: Who am I?
 description: About Emil Varga
+sitemap:
+  lastmod: 2022-03-03
+  priority: 1.0
+  changefreq: 'monthly'
 ---
 # {{ page.title }}
 I'm a lead software engineer at [Zalando](https://www.zalando.de/) in Berlin, Germany. Before Germany, I have lived and worked in Ireland for the better part of a decade. I enjoy learning, building things and sharing what I've learned in the process.
