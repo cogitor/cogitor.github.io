@@ -11,17 +11,17 @@ sitemap:
   changefreq: 'yearly'
 ---
 
-An [Identity function](https://en.wikipedia.org/wiki/Identity_function) is a very basic function that takes one argument and the only thing it does is return the argument value. Pretty simple: `f(x) = x`. This function is important in mathematics e.g in the [Category theory](https://en.wikipedia.org/wiki/Category_theory), but is it useful in everyday programming?
+An [identity function](https://en.wikipedia.org/wiki/Identity_function) is a very basic function that takes one argument and the only thing it does is return the argument value. Pretty simple: `f(x) = x`. This function is important in mathematics, e.g., in [Category theory](https://en.wikipedia.org/wiki/Category_theory), but is it useful in everyday programming?
 
 <!--break-->
 
 {% include responsive_image.html name="identity" alt="Identity" %}
 
-As explained by [Bartosz Milewski](https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/), the identity function is a neutral value in functional composition. Just like zero is a neutral value for addition, an identity function is a neutral value for some [higher order functions](/posts/2016/03/28/a-story-of-higher-order-functions). This means that if we pass an identity function `f(x)` into a higher order function (which as an argument expects a function that takes a single argument of type `x` and returns a value of type `x`), it would essentially have the same result as passing the value `x` into a regular function that takes an argument of type `x`.
+As explained by [Bartosz Milewski](https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/), the identity function is a neutral value in functional composition. Just like zero is a neutral value for addition, an identity function is a neutral value for some [higher order functions](/posts/2016/03/28/a-story-of-higher-order-functions). This means that if we pass an identity function `f(x)` into a higher order function (which, as an argument, expects a function that takes a single argument of type `x` and returns a value of type `x`), it would essentially have the same result as passing the value `x` into a regular function that takes an argument of type `x`.
 
 {% capture my_include %}
 // here is a higher order function (HOF) that takes an array of bytes 
-// and a transformation function so that i.e. we can return the size in KBs 
+// and a transformation function so that, i.e., we can return the size in KBs 
 // if we pass in something like (size => size / 1024)
 def getSize(data: Array[Byte], transform: (Double => Double)): Double = {
     transform(data.length)
@@ -36,7 +36,7 @@ def getSize(data: Array[Byte]): Double = {
 // for a sample byte array
 val dataArray = new Array[Byte](1024)
 
-// we can call the HOF with converting of the size to KBs
+// we can call the HOF with converting the size to KBs
 getSize(dataArray, size => size / 1024) // returns 1
 
 // or we can call it with just an identity function x => x
@@ -44,14 +44,14 @@ getSize(dataArray, size => size / 1024) // returns 1
 getSize(dataArray, x => x) // returns 1024
 getSize(dataArray, identity) // returns 1024 as well
 
-// it renders the same value as just calling
+// it returns the same value as just calling
 // the simple getSize function
 getSize(dataArray) // returns 1024
 
-// Of course, for this simple case we would have
-// not needed a higher order function, as we could've
+// Of course, for this simple case we would not have
+// needed a higher order function, as we could've
 // just called the transformation on the result
-// of the the simple getSize e.g. getSize(dataArray) / 1024
+// of the simple getSize, e.g., getSize(dataArray) / 1024
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
@@ -64,7 +64,7 @@ I've written about map and flatMap in [my previous post](/posts/2016/04/10/map-a
 // it returns the same collection unchanged
 List(1, 5, 7).map(identity) // returns List(1, 5, 7)
 
-// if we call a flatMap of a collection of collections with the identity function,
+// if we call flatMap on a collection of collections with the identity function,
 // it returns effectively the same result as calling .flatten
 List(List(1, 2), List(3), List(4, 5)).flatMap(identity) // returns List(1, 2, 3, 4, 5)
 List(List(1, 2), List(3), List(4, 5)).flatten // also returns List(1, 2, 3, 4, 5)
@@ -75,10 +75,10 @@ List(List(1, 2), List(3), List(4, 5)).flatMap(x => List(x)) // returns List(List
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-How come the identity function is not the neutral value for flatMap? Well, to answer this, we should probably check a simpler implementation of map and flatMap, the one in the [Options](/posts/2016/03/08/know-your-options):
+How come the identity function is not the neutral value for flatMap? Well, to answer this, we should probably check a simpler implementation of map and flatMap, the one in [Options](/posts/2016/03/08/know-your-options):
 
 {% capture my_include %}
-// the map function of the Options can also be called with the identity function
+// the map function of Options can also be called with the identity function
 // and it will return the same value
 Option(3).map(identity) // returns Some(3)
 Some(3).map(identity) // returns Some(3)
@@ -97,11 +97,12 @@ The collections flatMap function is more flexible than the one for Options, so i
 
 ## A bit of theory
 
-As mentioned before, the identity function is a neutral value for some higher order functions, namely for those that accept a function that takes a single argument of type `x` and return a value of type `x`. And the most notable of these functions is the map function.
+As mentioned before, the identity function is a neutral value for some higher order functions, namely for those that accept a function that takes a single argument of type `x` and returns a value of type `x`. And the most notable of these functions is the map function.
 
-The relationship between the map and identity functions is defined in the Category Theory. [Functors](https://bartoszmilewski.com/2015/01/20/functors/), which are an important abstraction in functional programming, are defined by a map function and the identity function, so that the identity function is the neutral value for the map function. There are some quite good explanations of Functors [here](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html) and [here](http://www.russbishop.net/monoids-monads-and-functors), so I won't spend more time elaborating on them.
+The relationship between the map and identity functions is defined in Category theory. [Functors](https://bartoszmilewski.com/2015/01/20/functors/), which are an important abstraction in functional programming, are defined by a map function and the identity function, so that the identity function is the neutral value for the map function. There are some quite good explanations of functors [here](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html) and [here](http://www.russbishop.net/monoids-monads-and-functors), so I won't spend more time elaborating on them.
 
-The relationship between the flatMap function and its neutral value, which is called the unit function, is also defined in the Category Theory, this time for [Monads](https://en.wikipedia.org/wiki/Monad_(functional_programming)).
+
+The relationship between the flatMap function and its neutral value, which is called the unit function, is also defined in Category theory, this time for [Monads](https://en.wikipedia.org/wiki/Monad_(functional_programming)).
 
 ## A more realistic use case
 
@@ -128,7 +129,7 @@ def parse[T](string: String)(implicit reads: Reads[T]): Try[T] = {
     // we use the fold method of JsResult here, which takes
     // two transformation methods - for the valid and invalid cases,
     // we throw an exception if the JSON is not valid, 
-    // or just return the result (by utilising an identity function)
+    // or just return the result (by utilizing an identity function)
     converted <- Try(validated.fold(
       error => throw new Exception("Failed to convert JSON"),
       identity
@@ -146,7 +147,7 @@ parse("[5, 6, 7]").get // returns List(5, 6, 7)
 
 This works well in this one particular case, but what if we want to reuse this function for extracting any list of values from a JSON object, which could be in any place in different JSON objects?
 
-We could add an optional function as an argument, so that if the function exists, it's being used to find the list in the JSON object:
+We could add an optional function as an argument, so that if the function exists, it's used to find the list in the JSON object:
 
 {% capture my_include %}
 import play.api.libs.json._
@@ -156,7 +157,7 @@ import scala.util.Try
 // which defaults to the identity function, so that if no function is passed
 // the whole JSON tree will be used
 def parse[T](string: String, pickElement: JsValue => JsValue = identity)(implicit reads: Reads[T]): Try[T] = {
-    for {
+  for {
     parsed <- Try(Json.parse(string))
 
     // pick a JsValue element
@@ -178,7 +179,7 @@ implicit val listReads: Reads[List[Long]] = Reads.list(Reads.LongReads)
 parse("[5, 6, 7]").get // returns List(5, 6, 7)
 
 // but we can also parse a JSON array from different parts of a JSON object
-parse("""{"array":[1, 2, 3]}""", value => value \ "array").get // returns List(1, 2, 5)
+parse("""{"array":[1, 2, 3]}""", value => value \ "array").get // returns List(1, 2, 3)
 parse("""{"ids":[1, 2, 5]}""", value => value \ "ids").get // returns List(1, 2, 5)
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}

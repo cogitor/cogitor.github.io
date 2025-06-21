@@ -19,7 +19,7 @@ I wrote about higher order functions in my [last post](/posts/2016/03/28/a-story
 
 Let's recall the foreach function mentioned in the [previous post](/posts/2016/03/28/a-story-of-higher-order-functions): `list.foreach(print)`. It is used to execute a function for each element of a collection.
 
-Map is applying a function on each element of a collection similar to foreach, with the difference that map returns a new collection as a result. So we can think of the function supplied to map as a transformation function, which we can use to transform a collection of `N` elements into a new collection of `N` transformed elements.
+Map applies a function to each element of a collection, similar to foreach, with the difference that map returns a new collection as a result. So we can think of the function supplied to map as a transformation function, which we can use to transform a collection of `N` elements into a new collection of `N` transformed elements.
 
 {% capture my_include %}// let's introduce a list of integers
 val list = List(1, 2, 4, 8)
@@ -38,7 +38,7 @@ val result = list.map(increment)
 
 [FlatMap](http://alvinalexander.com/scala/collection-scala-flatmap-examples-map-flatten) is similar to map, with the requirement that the elements of the collection are collections as well, and with an additional step of [flattening](http://alvinalexander.com/scala/how-to-flatten-list-lists-in-scala-with-flatten-method) the elements of a collection after executing the transformation function.
 
-Flatten is a standard operation of converting a lists of lists into one list with all the elements. For all collection types.
+Flatten is a standard operation for converting a list of lists into one list with all the elements, for all collection types.
 
 {% capture my_include %}// if we have a list of lists of integers named, creatively, listOfLists
 val listOfLists: List[List[Int]] = List(List(1, 2), List(4, 8), List())
@@ -49,7 +49,7 @@ val result: List[Int] = listOfLists.flatten
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-Therefore, flatmap would execute the transformation function on each list element of the `listOfLists` and return a single flattened list with all the transformed elements.
+Therefore, flatMap executes the transformation function on each list element of the `listOfLists` and returns a single flattened list with all the transformed elements.
 
 {% capture my_include %}// if we have the same list of lists of integers
 val list = List(List(1, 2), List(4, 8), List())
@@ -63,20 +63,20 @@ def increment(value: Int): Int = value + 1
 val result = list.flatMap(subList => subList.map(increment))
 // returns: List(2, 3, 5, 9)
 
-// if we were to call a map instead of flatMap we would instead increments the integer values
+// if we were to call map instead of flatMap we would instead increment the integer values
 // in the list of lists, without flattening it
 // list.map(subList => subList.map(increment))
-// returns: List(List(2, 3), List(4, 8), List())
+// returns: List(List(2, 3), List(5, 9), List())
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-I wouldn't dive deeper into the theory as I have only started scratching the surface myself, but I was constantly coming across the importance of the flatMap function for defining [monads](https://en.wikipedia.org/wiki/Monad_(functional_programming)) in functional programming. One thing I've learned so far is that not every construct that has a flatMap function is a monad, and that Scala has more flexible monad-like types. If interested, you can find more in [this Stack Overflow discussion](http://stackoverflow.com/questions/27750046/is-a-collection-with-flatmap-a-monad).
+I won't dive deeper into the theory as I have only started scratching the surface myself, but I was constantly coming across the importance of the flatMap function for defining [monads](https://en.wikipedia.org/wiki/Monad_(functional_programming)) in functional programming. One thing I've learned so far is that not every construct that has a flatMap function is a monad, and that Scala has more flexible monad-like types. If interested, you can find more in [this Stack Overflow discussion](http://stackoverflow.com/questions/27750046/is-a-collection-with-flatmap-a-monad).
 
 ## More than collections
 
-Map and flatMap functions exist in other classes as well, not just collections. A good example are container classes like [Option](http://www.scala-lang.org/api/current/index.html#scala.Option), [Future](http://www.scala-lang.org/api/current/#scala.concurrent.Future) and [Try](http://www.scala-lang.org/api/current/index.html#scala.util.Try). And we can implement them for our own classes as well.
+Map and flatMap functions exist in other classes as well, not just collections. Good examples are container classes like [Option](http://www.scala-lang.org/api/current/index.html#scala.Option), [Future](http://www.scala-lang.org/api/current/#scala.concurrent.Future), and [Try](http://www.scala-lang.org/api/current/index.html#scala.util.Try). And we can implement them for our own classes as well.
 
-I've written about Scala Options [before](/posts/2016/03/08/know-your-options) but I didn't mention how useful map and flatMap functions are with the Option container.
+I've written about Scala Options [before](/posts/2016/03/08/know-your-options), but I didn't mention how useful map and flatMap functions are with the Option container.
 
 Take, for instance, the map function. Calling the map function on an Option (which can be either a `Some(value)` or `None`) will execute the function only if the value is an instance of `Some`. So we can use this to conditionally execute a function without handling the `None` case.
 
@@ -95,7 +95,7 @@ On the other hand, the flatMap function can be even more useful with Options, as
 val list = List(1, 2, 4, 8)
 
 // and let's introduce a function that returns Option[Int]
-// such that for any value smaller than or equal 3, it returns None
+// such that for any value smaller than or equal to 3, it returns None
 // otherwise it returns Some(value)
 def isBigEnough(value: Int): Option[Int] = if (value > 3) Some(value) else None
 
@@ -111,7 +111,7 @@ val result: List[Int] = list.flatMap(elem => isBigEnough(elem))
 {% endcapture %}
 {% include code_snippet.html class="scala" code=my_include %}
 
-I will not get into [Try](http://danielwestheide.com/blog/2012/12/26/the-neophytes-guide-to-scala-part-6-error-handling-with-try.html) and [Futures](http://docs.scala-lang.org/overviews/core/futures.html) for now, as they would deserve more than just a few setences each, but I urge you to read more about both them if you're interested.
+I will not get into [Try](http://danielwestheide.com/blog/2012/12/26/the-neophytes-guide-to-scala-part-6-error-handling-with-try.html) and [Futures](http://docs.scala-lang.org/overviews/core/futures.html) for now, as they would deserve more than just a few sentences each, but I urge you to read more about both of them if you're interested.
 
 ## The for comprehension
 
@@ -173,6 +173,6 @@ for {
 
 ## Parallel execution
 
-Map and flatMap allow for easily processing collections in parallel. One can simply parallelise map and flatMap executions in Scala, by utilising [parallel collections](http://docs.scala-lang.org/overviews/parallel-collections/overview.html). It's as simple as adding `.par` to a collection to convert it to a parallel collection. Calling map or flatMap on the newly created parallel collection will now execute in parallel, utilising the number of cores available in the executing machine.
+Map and flatMap allow for easily processing collections in parallel. One can simply parallelize map and flatMap executions in Scala by utilizing [parallel collections](http://docs.scala-lang.org/overviews/parallel-collections/overview.html). It's as simple as adding `.par` to a collection to convert it to a parallel collection. Calling map or flatMap on the newly created parallel collection will now execute in parallel, utilizing the number of cores available in the executing machine.
 
-It's not a surprise that the map function is the key building block of the [MapReduce](https://en.wikipedia.org/wiki/MapReduce) programming model used for batch processing enormous amount of data in parallel in Google and in [Apache Hadoop](https://en.wikipedia.org/wiki/Apache_Hadoop). And both map and flatMap are  heavily utilised in [Apache Spark](https://en.wikipedia.org/wiki/Apache_Spark) as well.
+It's not a surprise that the map function is the key building block of the [MapReduce](https://en.wikipedia.org/wiki/MapReduce) programming model used for batch processing enormous amounts of data in parallel in Google and in [Apache Hadoop](https://en.wikipedia.org/wiki/Apache_Hadoop). And both map and flatMap are heavily utilized in [Apache Spark](https://en.wikipedia.org/wiki/Apache_Spark) as well.
