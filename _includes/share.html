@@ -3,9 +3,8 @@
 {% assign hashtags = page.tags | join: ',' | replace:' ','-' | cgi_escape %}
 <div class="share center">
     <span>Share with </span>
-    <a href="https://twitter.com/share?url={{page_url}}&text={{title}}&via={{site.author.twitter}}&hashtags={{hashtags}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://twitter.com/share?url={{page_url}}&text={{title}}&via={{site.author.twitter}}&hashtags={{hashtags}}');"><i class="fa fa-twitter-square fa-2x"></i></a>
-    <a href="https://reddit.com/submit?url={{page_url}}&title={{title}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://reddit.com/submit?url={{page_url}}&title={{title}}');"><i class="fa fa-reddit-square fa-2x"></i></a>
-    <a href="https://plus.google.com/share?url={{page_url}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://plus.google.com/share?url={{page_url}}');"><i class="fa fa-google-plus-square fa-2x"></i></a>
-    <a href="https://www.facebook.com/sharer.php?u={{page_url}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.facebook.com/sharer.php?u={{page_url}}');"><i class="fa fa-facebook-square fa-2x"></i></a>
-    <a href="https://www.linkedin.com/cws/share?url={{page_url}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.linkedin.com/cws/share?url={{page_url}}');"><i class="fa fa-linkedin-square fa-2x"></i></a>
+    <a href="https://twitter.com/share?url={{page_url}}&text={{title}}&via={{site.author.twitter}}&hashtags={{hashtags}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://twitter.com/share?url={{page_url}}&text={{title}}&via={{site.author.twitter}}&hashtags={{hashtags}}');"><i class="fa-brands fa-square-x-twitter fa-2x" title="Share on X"></i></a>
+    <a href="https://reddit.com/submit?url={{page_url}}&title={{title}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://reddit.com/submit?url={{page_url}}&title={{title}}');"><i class="fa-brands fa-square-reddit fa-2x" title="Share on Reddit"></i></a>
+    <a href="https://www.facebook.com/sharer.php?u={{page_url}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.facebook.com/sharer.php?u={{page_url}}');"><i class="fa-brands fa-square-facebook fa-2x" title="Share on Facebook"></i></a>
+    <a href="https://www.linkedin.com/cws/share?url={{page_url}}" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.linkedin.com/cws/share?url={{page_url}}');"><i class="fa-brands fa-linkedin fa-2x" title="Share on Linkedin"></i></a>
 </div>

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.7.3'
-gem 'github-pages', '~> 223', group: :jekyll_plugins
+ruby '3.3.4'
+gem 'github-pages', '232', group: :jekyll_plugins
 gem 'jekyll-compose', group: :jekyll_plugins
-gem 'pygments.rb'
-gem 'jekyll-redirect-from'
+gem 'rouge', '3.30.0'
+gem 'jekyll-redirect-from', '0.16.0'
