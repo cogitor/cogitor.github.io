@@ -13,7 +13,7 @@ sitemap:
       <h1 id="{{ post.date | date: '%s' }}">{{ post.title }}</h1>
       {{ post.excerpt }}
       {% if post.content contains '<!--break-->' %}
-        <a class="latest" href="{{ post.url }}" aria-labelledby="{{ post.date | date: '%s' }}">Read more</a>
+        <a class="latest" href="{{ post.url }}" aria-labelledby="{{ post.date | date: '%s' }}" aria-label="Continue to read the full article">Read more</a>
       {% endif %}
     </li>
   {% endfor %}

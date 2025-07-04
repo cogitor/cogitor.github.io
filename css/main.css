@@ -224,7 +224,7 @@ ul.posts li, ul.latest li {
 }
 
 .share a:hover {
-    color: #999;
+    color: #98859C;
 }
 
 /*google fonts*/
@@ -278,13 +278,13 @@ ul.posts li, ul.latest li {
   }
   
   .hljs-meta {
-    color: #999;
+    color: #8B7590;
     font-weight: bold;
   }
   
   .hljs-comment,
   .hljs-quote {
-    color: #999;
+    color: #8B7590;
     font-style: italic;
   }
   
