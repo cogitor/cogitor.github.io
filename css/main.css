@@ -38,7 +38,7 @@ html, body {
 .footer {
     position:absolute;
     bottom:0;
-    font-size: .82em;
+    font-size: .90em;
     width: 100%;
     min-width: 320px;
 }
@@ -78,9 +78,14 @@ html, body {
 }
 
 .header .home {
-    font-size: 1.2em;
+    font-size: 1.3em;
     fint-weight: bold;
     padding-left: 20px;
+}
+
+.header .home a {
+    color: #8B7590;
+    text-decoration: none;
 }
 
 /* link settings */
@@ -95,7 +100,7 @@ a {
 }
 
 a:hover {
-    color: #98859C;
+    color: #91659B;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -224,7 +229,7 @@ ul.posts li, ul.latest li {
 }
 
 .share a:hover {
-    color: #98859C;
+    color: #91659B;
 }
 
 /*google fonts*/
@@ -278,13 +283,13 @@ ul.posts li, ul.latest li {
   }
   
   .hljs-meta {
-    color: #8B7590;
+    color: #91659B;
     font-weight: bold;
   }
   
   .hljs-comment,
   .hljs-quote {
-    color: #8B7590;
+    color: #91659B;
     font-style: italic;
   }
   
@@ -297,7 +302,7 @@ ul.posts li, ul.latest li {
   
   .hljs-number,
   .hljs-literal {
-    color: #777;
+    color: #777676;
   }
   
   .hljs-string,
