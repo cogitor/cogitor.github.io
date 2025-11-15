@@ -1,8 +1,16 @@
 ---
 title: Code as Product
+date: 2025-11-15
+tags: [product development, platform engineering, developer productivity]
+layout: post
+description: I've been thinking a lot lately about how we build software, not for external customers, but for ourselves—for other developers.
+sitemap:
+  lastmod: 2025-11-15
+  priority: 0.3
+  changefreq: 'yearly'
 ---
 
-I've been thinking a lot lately about how we build software, not for external customers, but for ourselves—for other developers. It's a subtle shift in perspective, but treating our internal code, our platforms, and our APIs as ["products"](https://humanitec.com/blog/platform-as-a-product) can fundamentally change the way we work for the better.
+I've been thinking a lot lately about how we build software, not for external customers, but for ourselves—for other developers. It's a subtle shift in perspective, but treating our internal code, our platforms, and our APIs as ["products"](https://thenewstack.io/platform-engineering-demands-a-product-mindset/) can fundamentally change the way we work for the better. This is at the core of [Platform Engineering](https://platformengineering.org/talks-library/platform-as-a-product).
 
 <!--break-->
 
@@ -24,7 +32,7 @@ So, what does this look like in practice? It starts with empathy.
 
 *   **Testing and Reliability:** A product needs to be reliable. For an internal tool, this means providing a robust testing framework. Developers should be able to add their own integrations and be confident that they haven't broken anything. This means providing extensive unit and end-to-end test examples that they can build upon.
 
-*   **Documentation as a Feature:** Good documentation isn't an afterthought; it's a core feature of the product. We should document common patterns and provide clear examples. In the age of AI-powered development, this is more important than ever. Good documentation is not just for humans; it's for the tools that help us write code faster and more efficiently.
+*   **Documentation as a Feature:** Good documentation isn't an afterthought; it's a core feature of the product. We should document common patterns and provide clear examples. In an era of LLM-assisted code generation, this is more important than ever. Good documentation is not just for humans; it's for the tools that should help us write code faster and more efficiently.
 
 ## Measure, Iterate, and Evangelize
 
