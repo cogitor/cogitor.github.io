@@ -1,16 +1,18 @@
 ---
-title: Code as Product
+title: "Code as Product, Part 1: The Developer as the Customer"
 date: 2025-11-15
 tags: [product development, platform engineering, developer productivity]
 layout: post
-description: I've been thinking a lot lately about how we build software, not for external customers, but for ourselves—for other developers.
+description: What if we treated our fellow developers with the same care we treat our external customers? How does it look like in practice? It starts with empathy. 
 sitemap:
-  lastmod: 2025-11-15
+  lastmod: 2025-11-22
   priority: 0.3
   changefreq: 'yearly'
 ---
 
-I've been thinking a lot lately about how we build software, not for external customers, but for ourselves—for other developers. It's a subtle shift in perspective, but treating our internal code, our platforms, and our APIs as ["products"](https://thenewstack.io/platform-engineering-demands-a-product-mindset/) can fundamentally change the way we work for the better. This is at the core of [Platform Engineering](https://platformengineering.org/talks-library/platform-as-a-product).
+What if we treated our fellow developers with the same care we treat our external customers? It's a subtle shift in perspective, but treating our internal code, our platforms, and our APIs as ["products"](https://thenewstack.io/platform-engineering-demands-a-product-mindset/) can fundamentally change the way we work for the better. This is at the core of [Platform Engineering](https://platformengineering.org/talks-library/platform-as-a-product).
+
+This idea has been so impactful that I've decided to explore it as a series. In this first part, we'll start with explaining the reason behind it and some core concepts.
 
 <!--break-->
 
@@ -26,6 +28,14 @@ This user-centric approach is the heart of the "Code as Product" mindset. It's a
 
 So, what does this look like in practice? It starts with empathy.
 
+Consider Sarah, a developer tasked with setting up a new marketing campaign automation. Her goal is to build an automated marketing workflow that integrates with various internal and external services. Instead of facing a labyrinth of undocumented APIs and disparate systems, she finds a central workflow service built with a "Code as Product" mindset.
+
+She finds the service written in a language she's familiar with, and crucially, it comes with comprehensive guidelines. She quickly discovers how to add a new API endpoint to trigger her campaign, how to configure a new workflow that orchestrates email sends and social media posts, and how to manage dependencies. Best of all, the platform provides default observability (logging, metrics, tracing) and quality checks (testing frameworks, linting rules). This means Sarah can focus on the unique logic of her marketing campaign, confident that the underlying platform will handle the operational complexities and ensure reliability.
+
+This experience transforms her task from a daunting integration challenge into a streamlined development process, making her productive and happy.
+
+This story highlights several key aspects of treating code as a product for developers:
+
 *   **Effortless Onboarding:** When a new developer joins, the goal is to increase the confidence and reduce the time of their first meaningful contribution. This starts with choosing the language and frameworks that are most commonly used and easiest for new contributors to pick up, leveraging existing organizational knowledge. A great internal product then builds on this with clear setup instructions and documentation that anticipates their first questions. The benefit is twofold: the new developer feels productive and confident sooner, and the team gains a contributing member faster.
 
 *   **Extensibility and the "Golden Path":** Beyond the initial setup, we need to think about common contribution patterns to existing services, APIs, or libraries. How do developers add a new feature to an existing service, extend an API, or contribute to a shared library? The "Golden Path" is about identifying these frequent workflows and building well-designed APIs, code interfaces, and clear guidelines to make these contributions incredibly simple and efficient. This isn't about restricting creativity, but about removing cognitive overhead and ensuring consistency. By making the best way the easiest way, we free up developers to focus their energy on solving unique business problems, not on navigating complex or undocumented contribution processes.
@@ -34,18 +44,4 @@ So, what does this look like in practice? It starts with empathy.
 
 *   **Documentation as a Feature:** Good documentation isn't an afterthought; it's a core feature of the product. We should document common patterns and provide clear examples. In an era of LLM-assisted code generation, this is more important than ever. Good documentation is not just for humans; it's for the tools that should help us write code faster and more efficiently.
 
-## Measure, Iterate, and Evangelize
-
-A product doesn't stand still, and neither should our internal tools. Treating code as a product means committing to its lifecycle. This involves a continuous loop of feedback, measurement, and improvement.
-
-*   **Measure What Matters:** How do we know if our internal product is successful? We need to measure its impact. This could be through developer satisfaction surveys, tracking adoption rates of a new library, or even looking at engineering velocity metrics like the DORA metrics. The goal is to gather concrete data to understand what's working and what's not.
-
-*   **Iterate Based on Feedback:** This data creates a powerful feedback loop. It allows us to move beyond assumptions and make informed decisions about where to invest our efforts. We can prioritize the features and improvements that will have the most significant impact on developer productivity and happiness.
-
-*   **Evangelize and Drive Adoption:** A great internal product is only valuable if people use it. We need to become evangelists for our own tools. This means "marketing" them internally—communicating the value proposition, writing clear release notes, and actively encouraging adoption. By celebrating our internal products and their successes, we can build a culture of continuous improvement and shared ownership.
-
-## A New Way of Thinking
-
-Adopting a "Code as Product" mindset isn't about adding more process or bureaucracy. As engineers, we take pride in our craft. This mindset channels that pride in a new direction. Instead of being protective of our code, we should be proud that others want to use and extend it. The ultimate measure of our work's quality becomes the experience of the next developer. Are they happy? Are they productive?
-
-It's about moving from a reactive, ticket-based approach to a proactive, value-driven one, where the value is measured by the success of our fellow developers. By thinking of our internal code as a product, we can build a more robust, maintainable, and enjoyable development ecosystem for everyone.
+We've established the core principles of treating our internal code as a product. Now, it's time to translate those principles into tangible practices. In the [second part of this series]({% post_url 2025-11-16-code-as-product-part-2 %}), we'll delve into the actionable steps for successful implementation.
