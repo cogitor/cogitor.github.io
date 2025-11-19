@@ -16,15 +16,17 @@ In the [first part of this series]({% post_url 2025-11-15-code-as-product %}), w
 
 <!--break-->
 
-## Measure, Iterate, and Evangelize
+## Evangelize, Measure, and Iterate
 
-A product doesn't stand still, and neither should our internal tools. Treating code as a product means committing to its lifecycle. This involves a continuous loop of feedback, measurement, and improvement.
+A product doesn't stand still, and neither should our internal tools. Treating code as a product means committing to its lifecycle. This mirrors the Build-Measure-Learn feedback cycle from the [lean startup methodology](https://en.wikipedia.org/wiki/Lean_startup).
 
-*   **Measure What Matters:** How do we know if our internal product is successful? We need to measure its impact. This could be through developer satisfaction surveys, tracking adoption rates of a new library, or even looking at engineering velocity metrics like the DORA metrics. The goal is to gather concrete data to understand what's working and what's not.
+![Build-Measure-Learn Feedback Cycle]({{ site.baseurl }}/assets/feedback-cycle.svg)
 
-*   **Iterate Based on Feedback:** This data creates a powerful feedback loop. It allows us to move beyond assumptions and make informed decisions about where to invest our efforts. We can prioritize the features and improvements that will have the most significant impact on developer productivity and happiness.
+*   **Evangelize and Drive Adoption:** A great internal product is only valuable if people use it. We need to become evangelists for our own tools. This means "marketing" them internally—communicating the value proposition, writing clear release notes, and actively encouraging adoption. By celebrating our internal products and their successes, we can build a culture of continuous improvement and shared ownership. Without adoption, there's no feedback to gather.
 
-*   **Evangelize and Drive Adoption:** A great internal product is only valuable if people use it. We need to become evangelists for our own tools. This means "marketing" them internally—communicating the value proposition, writing clear release notes, and actively encouraging adoption. By celebrating our internal products and their successes, we can build a culture of continuous improvement and shared ownership.
+*   **Measure What Matters:** Once developers are using your platform, how do we know if it's successful? We need to measure its impact. This could be through developer satisfaction surveys, tracking adoption rates of a new library, or even looking at engineering velocity metrics like the DORA metrics. The goal is to gather concrete data to understand what's working and what's not.
+
+*   **Iterate Based on Feedback:** This data creates a powerful feedback loop. It allows us to move beyond assumptions and make informed decisions about where to invest our efforts. We can prioritize the features and improvements that will have the most significant impact on developer productivity and happiness. Then the cycle repeats: evangelize the improvements, measure their impact, and iterate again.
 
 ## A New Way of Thinking
 
