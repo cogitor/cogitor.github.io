@@ -26,7 +26,7 @@ A product doesn't stand still, and neither should our internal tools. Treating c
 
 *   **Measure What Matters:** Once developers are using your platform, how do we know if it's successful? We need to measure its impact. This could be through developer satisfaction surveys, tracking adoption rates of a new library, or even looking at engineering velocity metrics like the DORA metrics. The goal is to gather concrete data to understand what's working and what's not.
 
-*   **Iterate Based on Feedback:** This data creates a powerful feedback loop. It allows us to move beyond assumptions and make informed decisions about where to invest our efforts. We can prioritize the features and improvements that will have the most significant impact on developer productivity and happiness. Then the cycle repeats: evangelize the improvements, measure their impact, and iterate again.
+*   **Iterate Based on Feedback:** This data creates a powerful feedback loop that allows us to move beyond assumptions. By treating developer support as a core part of this cycle, every interaction becomes an opportunity to learn from our users. This qualitative feedback helps us understand their challenges and prioritize the features and improvements that will have the most significant impact on developer productivity and happiness. Then the cycle repeats: evangelize the improvements, measure their impact, and iterate again.
 
 ## A New Way of Thinking
 
