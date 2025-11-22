@@ -1,12 +1,12 @@
 ---
 title: "Code as Product, Part 1: The Developer as the Customer"
 date: 2025-11-15
-tags: [product development, platform engineering, developer productivity]
+tags: [product development, platform engineering, developer productivity, code-as-product]
 layout: post
 description: What if we treated our fellow developers with the same care we treat our external customers? How does it look like in practice? It starts with empathy. 
 sitemap:
   lastmod: 2025-11-22
-  priority: 0.3
+  priority: 0.5
   changefreq: 'yearly'
 ---
 

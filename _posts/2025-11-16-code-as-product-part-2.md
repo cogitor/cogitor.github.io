@@ -1,7 +1,7 @@
 ---
 title: "Code as Product, Part 2: A New Way of Thinking"
 date: 2025-11-16
-tags: [product development, platform engineering, developer productivity]
+tags: [product development, platform engineering, developer productivity, code-as-product]
 layout: post
 description: Shifting our perspective to see code as a product is a powerful first step, but it's not the end of the story. The real challenge—and where the true value lies—is in continuously adapting that product to the developers who use it. After all, a product that doesn't evolve with its users is destined to be left behind.
 sitemap:
