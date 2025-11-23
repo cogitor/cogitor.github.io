@@ -166,7 +166,7 @@ incrementByThree(2); // return: 5
 
 Knowing the properties of JavaScript functions, I had a déjà vu while learning Scala, because Scala functions are implemented as [objects as well](https://gleichmann.wordpress.com/2010/11/08/functional-scala-functions-as-objects-as-functions/). This is one of the key properties of the language that allows for both object-oriented and functional programming styles.
 
-{% include responsive_image.html name="scala_code" alt="Scala code on a computer screen" %}
+{% include responsive_image.html name="scala_code" alt="Scala code on a computer screen" width="1600" height="1067" %}
 
 ## Scala functions
 

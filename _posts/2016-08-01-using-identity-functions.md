@@ -15,7 +15,7 @@ An [identity function](https://en.wikipedia.org/wiki/Identity_function) is a ver
 
 <!--break-->
 
-{% include responsive_image.html name="identity" alt="The start of the identity function f(x)= followed by a fingerprint representing identity" %}
+{% include responsive_image.html name="identity" alt="The start of the identity function f(x)= followed by a fingerprint representing identity" width="720" height="555" %}
 
 As explained by [Bartosz Milewski](https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/), the identity function is a neutral value in functional composition. Just like zero is a neutral value for addition, an identity function is a neutral value for some [higher order functions](/posts/2016/03/28/a-story-of-higher-order-functions). This means that if we pass an identity function `f(x)` into a higher order function (which, as an argument, expects a function that takes a single argument of type `x` and returns a value of type `x`), it would essentially have the same result as passing the value `x` into a regular function that takes an argument of type `x`.
 
