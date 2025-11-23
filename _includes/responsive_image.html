@@ -1,11 +1,20 @@
 <div class="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="{{ site.baseurl }}/assets/{{include.name}}.webp, {{ site.baseurl }}/assets/{{include.name}}_large.webp 1.5x" type="image/webp">
-    <source media="(max-width: 800px)" srcset="{{ site.baseurl }}/assets/{{include.name}}_large.webp, {{ site.baseurl }}/assets/{{include.name}}_xlarge.webp 2x" type="image/webp">
-    <source srcset="{{ site.baseurl }}/assets/{{include.name}}_xlarge.webp" type="image/webp">
-    <source media="(max-width: 640px)" srcset="{{ site.baseurl }}/assets/{{include.name}}.jpg, {{ site.baseurl }}/assets/{{include.name}}_large.jpg 1.5x" type="image/jpeg">
-    <source media="(max-width: 800px)" srcset="{{ site.baseurl }}/assets/{{include.name}}_large.jpg, {{ site.baseurl }}/assets/{{include.name}}_xlarge.jpg 2x" type="image/jpeg">
-    <source srcset="{{ site.baseurl }}/assets/{{include.name}}_xlarge.jpg" type="image/jpeg">
-    <img src="{{ site.baseurl }}/assets/{{include.name}}.jpg" alt="{{include.alt}}">
+    <source
+      sizes="(max-width: 640px) 100vw, (max-width: 800px) 80vw, 100vw"
+      srcset="{{ site.baseurl }}/assets/{{include.name}}/360.avif 360w, {{ site.baseurl }}/assets/{{include.name}}/480.avif 480w, {{ site.baseurl }}/assets/{{include.name}}/640.avif 640w, {{ site.baseurl }}/assets/{{include.name}}/800.avif 800w, {{ site.baseurl }}/assets/{{include.name}}/1024.avif 1024w, {{ site.baseurl }}/assets/{{include.name}}/1200.avif 1200w, {{ site.baseurl }}/assets/{{include.name}}/1600.avif 1600w"
+      type="image/avif"
+    >
+    <source
+      sizes="(max-width: 640px) 100vw, (max-width: 800px) 80vw, 100vw"
+      srcset="{{ site.baseurl }}/assets/{{include.name}}/360.webp 360w, {{ site.baseurl }}/assets/{{include.name}}/480.webp 480w, {{ site.baseurl }}/assets/{{include.name}}/640.webp 640w, {{ site.baseurl }}/assets/{{include.name}}/800.webp 800w, {{ site.baseurl }}/assets/{{include.name}}/1024.webp 1024w, {{ site.baseurl }}/assets/{{include.name}}/1200.webp 1200w, {{ site.baseurl }}/assets/{{include.name}}/1600.webp 1600w"
+      type="image/webp"
+    >
+    <source
+      sizes="(max-width: 640px) 100vw, (max-width: 800px) 80vw, 100vw"
+      srcset="{{ site.baseurl }}/assets/{{include.name}}/360.jpg 360w, {{ site.baseurl }}/assets/{{include.name}}/480.jpg 480w, {{ site.baseurl }}/assets/{{include.name}}/640.jpg 640w, {{ site.baseurl }}/assets/{{include.name}}/800.jpg 800w, {{ site.baseurl }}/assets/{{include.name}}/1024.jpg 1024w, {{ site.baseurl }}/assets/{{include.name}}/1200.jpg 1200w, {{ site.baseurl }}/assets/{{include.name}}/1600.jpg 1600w"
+      type="image/jpeg"
+    >
+    <img src="{{ site.baseurl }}/assets/{{include.name}}/640.jpg" alt="{{include.alt}}" title="{{include.alt}}" loading="lazy" width="{{ include.width }}" height="{{ include.height }}">
   </picture>
 </div>

@@ -33,7 +33,7 @@ A well-defined product decouples progress from a single team's constraints. If y
 **3. AI Readiness**
 [Context is the new code](https://medium.com/@jlcases/documentation-in-the-age-of-ai-why-context-is-the-new-code-003247818347) for AI agents. "Code as Product" demands detailed guidelines and examples—the exact fuel AI assistants need to generate extensions reliably. You are effectively building an API for both human and AI developers.
 
-<!--break-->
+{% include responsive_image.html name="k67" alt="A drawing of the modular and extentable K67 kiosk designed in 1966 by the Slovenian architect and designer Sasa Machtig" width="1600" height="1024" %}
 
 ## Implementation Gotchas
 
