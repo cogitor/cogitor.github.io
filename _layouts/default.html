@@ -17,7 +17,7 @@
   {% if jekyll.environment == 'development' %}
   <script type="module" src="/assets/js/theme.source.js" defer></script>
   {% else %}
-  <script src="/assets/js/theme.js" defer></script>
+  <script type="module" src="/assets/js/theme.js" defer></script>
   {% endif %}
   <script>document.addEventListener('DOMContentLoaded', (e) => {
     hljs.highlightAll();
