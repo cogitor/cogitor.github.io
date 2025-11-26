@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 30 400 340" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Background circle for reference -->
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+
+  <!-- Evangelize (top-left) -->
+  <rect x="50" y="50" width="120" height="80" fill="white" stroke="black" stroke-width="2" rx="5"/>
+  <text x="110" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="black">Evangelize</text>
+  <text x="110" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="black">&amp; Drive</text>
+  <text x="110" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="black">Adoption</text>
+
+  <!-- Measure (top-right) -->
+  <rect x="230" y="50" width="120" height="80" fill="white" stroke="black" stroke-width="2" rx="5"/>
+  <text x="290" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="black">Measure</text>
+  <text x="290" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="black">What</text>
+  <text x="290" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="black">Matters</text>
+
+  <!-- Iterate (bottom) -->
+  <rect x="125" y="280" width="150" height="80" fill="white" stroke="black" stroke-width="2" rx="5"/>
+  <text x="200" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="black">Iterate Based</text>
+  <text x="200" y="323" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="black">on Feedback</text>
+
+  <!-- Arrows connecting boxes -->
+  <!-- Evangelize to Measure -->
+  <path d="M 170 90 L 223 90" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Measure to Iterate -->
+  <path d="M 290 130 Q 350 200 278 325" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Iterate to Evangelize -->
+  <path d="M 125 320 Q 50 200 115 135" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Center circular arrow (clockwise) -->
+  <path d="M 215 170 A 35 35 0 1 1 185 170" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Center Learn label -->
+  <text x="200" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="black">Learn</text>
+</svg>
