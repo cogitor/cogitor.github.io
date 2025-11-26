@@ -26,9 +26,9 @@
 [data-theme="dark"] {
   --background-color: #121212;
   --text-color: #e0e0e0;
-  --primary-color: #BB86FC;
-  --primary-color-hover: #D1C4E9;
-  --secondary-text-color: #BDBDBD;
+  --primary-color: #A78BFA;
+  --primary-color-hover: #C4B5FD;
+  --secondary-text-color: #9CA3AF;
   --error-color: #CF6679;
   --code-background-color: #1E1E1E;
   --code-text-color: #d4d4d4;
@@ -40,8 +40,8 @@
   --code-symbol-background: none;
   --code-deletion-background: none;
   --code-addition-background: none;
-  --tag-background-color: #BB86FC;
-  --tag-text-color: #121212;
+  --tag-background-color: #8B5CF6;
+  --tag-text-color: #F3F4F6;
   --code-title-color: #d4d4d4;
   --code-class-name-color: #4EC9B0;
   --code-symbol-color: #d4d4d4;
@@ -52,9 +52,9 @@
   :root:not([data-theme]) {
     --background-color: #121212;
     --text-color: #e0e0e0;
-    --primary-color: #BB86FC;
-    --primary-color-hover: #D1C4E9;
-    --secondary-text-color: #BDBDBD;
+    --primary-color: #A78BFA;
+    --primary-color-hover: #C4B5FD;
+    --secondary-text-color: #9CA3AF;
     --error-color: #CF6679;
     --code-background-color: #1E1E1E;
     --code-text-color: #d4d4d4;
@@ -66,8 +66,8 @@
     --code-symbol-background: none;
     --code-deletion-background: none;
     --code-addition-background: none;
-    --tag-background-color: #BB86FC;
-    --tag-text-color: #121212;
+    --tag-background-color: #8B5CF6;
+    --tag-text-color: #F3F4F6;
   }
 }
 
