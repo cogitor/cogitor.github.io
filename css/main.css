@@ -15,7 +15,7 @@
   --code-symbol-background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAO7d+/+z4gsBhJwdXVlhAvCBECKwIIwAbhKZBUwBQA6hBpm5efZsgAAAABJRU5ErkJggg==) repeat;
   --code-deletion-background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAE0lEQVQIW2MMDQ39zzhz5kwIAQAyxweWgUHd1AAAAABJRU5ErkJggg==) repeat;
   --code-addition-background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAALUlEQVQYV2N89+7dfwYk8P79ewZBQUFkIQZGOiu6e/cuiptQHAPl0NtNxAQBAM97Oejj3Dg7AAAAAElFTkSuQmCC) repeat;
-  --tag-background-color: #555;
+  --tag-background-color: #707070;
   --tag-text-color: #FFF;
   --code-title-color: #000;
   --code-class-name-color: #333;
@@ -32,20 +32,20 @@
   --error-color: #CF6679;
   --code-background-color: #1E1E1E;
   --code-text-color: #d4d4d4;
-  --code-meta-color: #9cdcfe;
-  --code-keyword-color: #c586c0;
-  --code-number-color: #b5cea8;
+  --code-meta-color: #9B8BA8;
+  --code-keyword-color: #D0D0D0;
+  --code-number-color: #AAAAAA;
   --code-string-background: none;
   --code-regexp-background: none;
   --code-symbol-background: none;
   --code-deletion-background: none;
   --code-addition-background: none;
-  --tag-background-color: #A78BFA;
-  --tag-text-color: #111827;
-  --code-title-color: #d4d4d4;
-  --code-class-name-color: #4EC9B0;
-  --code-symbol-color: #d4d4d4;
-  --code-built-in-color: #569CD6;
+  --tag-background-color: #666666;
+  --tag-text-color: #FFFFFF;
+  --code-title-color: #D4C5F9;
+  --code-class-name-color: #D4C5F9;
+  --code-symbol-color: #AAAAAA;
+  --code-built-in-color: #D4C5F9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,16 +58,19 @@
     --error-color: #CF6679;
     --code-background-color: #1E1E1E;
     --code-text-color: #d4d4d4;
-    --code-meta-color: #9cdcfe;
-    --code-keyword-color: #c586c0;
-    --code-number-color: #b5cea8;
+    --code-meta-color: #9B8BA8;
+    --code-keyword-color: #D0D0D0;
+    --code-number-color: #AAAAAA;
     --code-string-background: none;
     --code-regexp-background: none;
     --code-symbol-background: none;
     --code-deletion-background: none;
     --code-addition-background: none;
-    --tag-background-color: #8B5CF6;
-    --tag-text-color: #F3F4F6;
+    --tag-background-color: #666666;
+    --tag-text-color: #FFFFFF;
+    --code-title-color: #D4C5F9;
+    --code-class-name-color: #D4C5F9;
+    --code-built-in-color: #D4C5F9;
   }
 }
 
