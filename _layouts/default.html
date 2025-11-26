@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
   {% include head.html %}
-  <script src="/assets/js/theme.js"></script>
   <body>
     <div class="container">
       <div class="header" role="banner">
@@ -15,10 +14,12 @@
       </div>
     </div>
   </body>
+  <script src="/assets/js/theme.js" defer></script>
   <script>document.addEventListener('DOMContentLoaded', (e) => {
     hljs.highlightAll();
    });</script>
   <!-- load css lazily here-->
   <!--copyright icons-->
   {% include lazy_css.html css_path='https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css' %}
+</html>
 </html>
