@@ -1,0 +1,13 @@
+{
+  "name": "emilvarga-blog",
+  "version": "1.0.0",
+  "description": "Personal blog of Emil Varga",
+  "scripts": {
+    "minify:js": "terser assets/js/theme.source.js -o assets/js/theme.js -c -m",
+    "build": "npm run minify:js && bundle exec jekyll build",
+    "dev": "JEKYLL_ENV=development bundle exec jekyll serve"
+  },
+  "devDependencies": {
+    "terser": "^5.27.0"
+  }
+}

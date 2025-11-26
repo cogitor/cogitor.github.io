@@ -14,10 +14,16 @@
       </div>
     </div>
   </body>
+  {% if jekyll.environment == 'development' %}
+  <script type="module" src="/assets/js/theme.source.js" defer></script>
+  {% else %}
+  <script type="module" src="/assets/js/theme.js" defer></script>
+  {% endif %}
   <script>document.addEventListener('DOMContentLoaded', (e) => {
     hljs.highlightAll();
    });</script>
   <!-- load css lazily here-->
   <!--copyright icons-->
   {% include lazy_css.html css_path='https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css' %}
+</html>
 </html>

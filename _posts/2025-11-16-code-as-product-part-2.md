@@ -20,7 +20,9 @@ In the [first part of this series]({% post_url 2025-11-15-code-as-product %}), w
 
 A product doesn't stand still, and neither should our internal tools. Treating code as a product means committing to its lifecycle. This mirrors the Build-Measure-Learn feedback cycle from the [lean startup methodology](https://en.wikipedia.org/wiki/Lean_startup).
 
-![Build-Measure-Learn Feedback Cycle]({{ site.baseurl }}/assets/feedback-cycle.svg)
+<div class="center">
+  {% include feedback-cycle.svg %}
+</div>
 
 *   **Evangelize and Drive Adoption:** A great internal product is only valuable if people use it. We need to become evangelists for our own tools. This means "marketing" them internally—communicating the value proposition, writing clear release notes, and actively encouraging adoption. By celebrating our internal products and their successes, we can build a culture of continuous improvement and shared ownership. Without adoption, there's no feedback to gather.
 
