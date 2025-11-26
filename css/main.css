@@ -441,3 +441,22 @@ ul.posts li, ul.latest li {
   .hljs-strong {
     font-weight: bold;
   }
+
+/* Theme-aware SVG styling */
+.themed-svg rect {
+  fill: var(--background-color);
+  stroke: var(--text-color);
+}
+.themed-svg text {
+  fill: var(--text-color);
+  stroke: none;
+}
+.themed-svg path {
+  stroke: var(--text-color);
+}
+.themed-svg polygon {
+  fill: var(--text-color);
+}
+.themed-svg circle {
+  stroke: var(--text-color);
+}
