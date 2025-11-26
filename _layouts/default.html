@@ -14,7 +14,11 @@
       </div>
     </div>
   </body>
+  {% if jekyll.environment == 'development' %}
+  <script src="/assets/js/theme.source.js" defer></script>
+  {% else %}
   <script src="/assets/js/theme.js" defer></script>
+  {% endif %}
   <script>document.addEventListener('DOMContentLoaded', (e) => {
     hljs.highlightAll();
    });</script>

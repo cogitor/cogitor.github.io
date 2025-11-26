@@ -1,3 +1,5 @@
+---
+---
 :root {
   --background-color: #FFF;
   --text-color: #333;
@@ -87,9 +89,8 @@ html, body {
 
 .container {
     min-height: 100%;
-    /* keep width for large screens */
     max-width: 1024px;
-    margin:0 auto; /* to keep container in the middle */
+    margin:0 auto;
     position:relative;
     background-color: var(--background-color);
 }
@@ -97,11 +98,9 @@ html, body {
 .body {
     padding: 20px;
     min-height: 100%;
-    /* footer margin - same as footer height */
     margin-bottom:-45px;
 }
 
-/* the little hack from https://css-tricks.com/snippets/css/sticky-footer/ */
 .body:after {
   content: "";
   display: block;
@@ -111,7 +110,6 @@ html, body {
     height:45px;
 }
 
-/* footer settings */
 .footer {
     position:absolute;
     bottom:0;
@@ -138,8 +136,6 @@ html, body {
     font-size: .78em;
 }
 
-/* header settings */
-
 .header {
     padding: 10px;
 }
@@ -165,7 +161,6 @@ html, body {
     text-decoration: none;
 }
 
-/* link settings */
 a {
     color: var(--text-color);
     text-decoration: none;
@@ -182,14 +177,12 @@ a:hover {
     text-decoration: underline;
 }
 
-/* page content settings */
 .body source, .body img {
     width: 100%;
     max-width: 800px;
     height: auto;
 }
 
-/* for things like images, share links etc. */
 .center {
     text-align: center;
 }
@@ -216,14 +209,12 @@ h3 {
     color: var(--text-color);
 }
 
-/* date and tags on post */
 p.meta {
     font-size: 1.2em;
     color: var(--secondary-text-color);
     padding-bottom: 20px;
 }
 
-/* date and tags on Posts and Tags */
 span.meta {
     color: var(--secondary-text-color);
 }
@@ -249,13 +240,11 @@ ul.posts li, ul.latest li {
     list-style: none;
 }
 
-/* | between date and post name */
 .divider {
     padding-left: 10px;
     padding-right: 10px;
 }
 
-/* tag_box */
 .tag_box {
     list-style: none;
     margin: 0;
@@ -291,12 +280,10 @@ ul.posts li, ul.latest li {
     color: var(--secondary-text-color);
 }
 
-/* 404 page */
 .error {
     color: var(--error-color);
 }
 
-/* share links colors */
 .share {
     padding-top: 20px;
     padding-bottom: 40px;
@@ -310,8 +297,6 @@ ul.posts li, ul.latest li {
     color: var(--primary-color-hover);
 }
 
-/*google fonts*/
-/* latin-ext */
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -321,7 +306,6 @@ ul.posts li, ul.latest li {
     src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVIGxA.woff2) format('woff2');
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
   }
-  /* latin */
   @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -331,9 +315,6 @@ ul.posts li, ul.latest li {
     src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
-
-  /* highlight */
-  /* based on grayscale.css */
 
 .hljs {
     display: block;
@@ -397,7 +378,8 @@ ul.posts li, ul.latest li {
     font-weight: bold;
   }
   
-  .hljs-subst {
+  
+ .hljs-subst {
     font-weight: normal;
   }
   
@@ -432,11 +414,13 @@ ul.posts li, ul.latest li {
 
   }
   
+ 
   .hljs-addition {
     color: #000;
     background: var(--code-addition-background);
   }
   
+ 
   .hljs-emphasis {
     font-style: italic;
   }
@@ -445,7 +429,6 @@ ul.posts li, ul.latest li {
     font-weight: bold;
   }
 
-/* Theme-aware SVG styling */
 .themed-svg rect {
   fill: var(--background-color);
   stroke: var(--text-color);
