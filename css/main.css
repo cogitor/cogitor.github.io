@@ -17,6 +17,10 @@
   --code-addition-background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAALUlEQVQYV2N89+7dfwYk8P79ewZBQUFkIQZGOiu6e/cuiptQHAPl0NtNxAQBAM97Oejj3Dg7AAAAAElFTkSuQmCC) repeat;
   --tag-background-color: #555;
   --tag-text-color: #FFF;
+  --code-title-color: #000;
+  --code-class-name-color: #333;
+  --code-symbol-color: #000;
+  --code-built-in-color: #000;
 }
 
 [data-theme="dark"] {
@@ -38,6 +42,10 @@
   --code-addition-background: none;
   --tag-background-color: #BB86FC;
   --tag-text-color: #121212;
+  --code-title-color: #d4d4d4;
+  --code-class-name-color: #4EC9B0;
+  --code-symbol-color: #d4d4d4;
+  --code-built-in-color: #569CD6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -382,7 +390,7 @@ ul.posts li, ul.latest li {
   .hljs-title,
   .hljs-section,
   .hljs-selector-id {
-    color: #000;
+    color: var(--code-title-color);
     font-weight: bold;
   }
   
@@ -393,7 +401,7 @@ ul.posts li, ul.latest li {
   .hljs-class .hljs-title,
   .hljs-type,
   .hljs-name {
-    color: var(--text-color);
+    color: var(--code-class-name-color);
     font-weight: bold;
   }
   
@@ -405,13 +413,13 @@ ul.posts li, ul.latest li {
   .hljs-symbol,
   .hljs-bullet,
   .hljs-link {
-    color: #000;
+    color: var(--code-symbol-color);
     background: var(--code-symbol-background);
   }
   
   .hljs-built_in,
   .hljs-builtin-name {
-    color: #000;
+    color: var(--code-built-in-color);
     text-decoration: underline;
   }
   
