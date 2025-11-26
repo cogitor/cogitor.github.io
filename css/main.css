@@ -40,8 +40,8 @@
   --code-symbol-background: none;
   --code-deletion-background: none;
   --code-addition-background: none;
-  --tag-background-color: #8B5CF6;
-  --tag-text-color: #F3F4F6;
+  --tag-background-color: #A78BFA;
+  --tag-text-color: #111827;
   --code-title-color: #d4d4d4;
   --code-class-name-color: #4EC9B0;
   --code-symbol-color: #d4d4d4;
@@ -459,4 +459,13 @@ ul.posts li, ul.latest li {
 }
 .themed-svg circle {
   stroke: var(--text-color);
+}
+
+#theme-switcher {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0;
 }

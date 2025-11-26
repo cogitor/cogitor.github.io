@@ -15,10 +15,11 @@
   // Defer switcher logic until DOM is ready
   D.addEventListener('DOMContentLoaded', (event) => {
     var themeSwitcher = D.getElementById('theme-switcher');
+    var themeIcon = themeSwitcher ? themeSwitcher.querySelector('span') : null;
     
     // Set initial icon
-    if (themeSwitcher) {
-        themeSwitcher.innerHTML = H.getAttribute('data-theme') === 'dark' ? '&#127769;' : '&#9728;&#65039;';
+    if (themeIcon) {
+        themeIcon.innerHTML = H.getAttribute('data-theme') === 'dark' ? '&#127769;' : '&#9728;&#65039;';
     }
 
     if (themeSwitcher) {
@@ -28,7 +29,9 @@
         var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         localStorage.setItem('theme', newTheme);
         H.setAttribute('data-theme', newTheme);
-        themeSwitcher.innerHTML = newTheme === 'dark' ? '&#127769;' : '&#9728;&#65039;';
+        if (themeIcon) {
+            themeIcon.innerHTML = newTheme === 'dark' ? '&#127769;' : '&#9728;&#65039;';
+        }
       });
     }
   });
