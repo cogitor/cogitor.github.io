@@ -2,26 +2,34 @@
   var D = document;
   var H = D.documentElement;
   var theme = localStorage.getItem('theme');
-  var themeSwitcher = D.getElementById('theme-switcher');
 
-  function applyTheme(t) {
-    H.setAttribute('data-theme', t);
-    themeSwitcher.innerHTML = t === 'dark' ? '&#127769;' : '&#9728;&#65039;';
-  }
-
+  // Apply theme immediately to avoid FOUC
+  var initialTheme = 'light';
   if (theme) {
-    applyTheme(theme);
+    initialTheme = theme;
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    applyTheme('dark');
-  } else {
-    applyTheme('light'); // Explicitly set light as default fallback
+    initialTheme = 'dark';
   }
+  H.setAttribute('data-theme', initialTheme);
 
-  themeSwitcher.addEventListener('click', function(e) {
-    e.preventDefault();
-    var currentTheme = H.getAttribute('data-theme');
-    var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', newTheme);
-    applyTheme(newTheme);
+  // Defer switcher logic until DOM is ready
+  D.addEventListener('DOMContentLoaded', (event) => {
+    var themeSwitcher = D.getElementById('theme-switcher');
+    
+    // Set initial icon
+    if (themeSwitcher) {
+        themeSwitcher.innerHTML = H.getAttribute('data-theme') === 'dark' ? '&#127769;' : '&#9728;&#65039;';
+    }
+
+    if (themeSwitcher) {
+      themeSwitcher.addEventListener('click', function(e) {
+        e.preventDefault();
+        var currentTheme = H.getAttribute('data-theme');
+        var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        H.setAttribute('data-theme', newTheme);
+        themeSwitcher.innerHTML = newTheme === 'dark' ? '&#127769;' : '&#9728;&#65039;';
+      });
+    }
   });
 })();
