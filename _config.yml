@@ -17,10 +17,6 @@ excerpt_separator: <!--break-->
 sass:
   style: compressed
 
-# Exclude minified JS from local builds (use source instead)
-exclude:
-  - assets/js/theme.js
-
 ignore_by_sitemap:
   - /LICENCE
   - /404.html
