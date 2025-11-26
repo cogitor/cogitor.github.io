@@ -6,18 +6,15 @@ This is the source code for the personal blog of Emil Varga, available at [emilv
 
 The project follows a standard Jekyll project structure:
 
-*   `_config.yml`: The main configuration file for the Jekyll site. It contains settings such as the site title, author information, URL, and other global settings. Includes `sass: style: compressed` for automatic CSS compression and `exclude` configuration to manage file inclusion in builds.
+*   `_config.yml`: The main configuration file for the Jekyll site. It contains settings such as the site title, author information, URL, and other global settings.
 *   `_posts/`: This directory contains all the blog posts, which are written in Markdown. The filename of each post follows the naming convention `YYYY-MM-DD-title.md`.
 *   `_layouts/`: This directory contains the HTML layouts for the different types of pages on the site, such as the default layout and the post layout.
 *   `_includes/`: This directory contains reusable HTML snippets that can be included in the layouts and posts.
 *   `assets/`: This directory contains all the static assets for the site, such as images, CSS, and JavaScript files.
-*   `assets/js/theme.source.js`: Readable source file for theme switcher logic (handles dark/light mode toggle and icon swapping).
-*   `assets/js/theme.js`: Minified production version of `theme.source.js` (generated via terser during `npm run build` and pre-push hook).
-*   `css/main.scss`: SCSS source file (compiled and compressed by Jekyll during build via `sass: compressed` config).
+*   `css/`: This directory contains the main CSS file for the site, `main.css`.
 *   `index.md`: The home page of the blog.
 *   `about.md`: The about page of the blog.
 *   `Gemfile`: This file lists the Ruby gems (dependencies) used by the project.
-*   `package.json`: Manages JavaScript tooling, including terser for JS minification and npm scripts for building and development.
 
 ## Building and Running
 

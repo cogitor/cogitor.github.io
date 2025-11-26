@@ -43,19 +43,4 @@
   <link href="/rss.xml" rel="alternate" type="application/rss+xml" title="emilvarga.com">
   <link rel="stylesheet" type="text/css" href="/css/main.css?{{site.time | date: '%s'}}">
   <script src="/assets/third_party/js/highlight.min.js"></script>
-  <!-- Apply theme immediately to prevent FOUC -->
-  <script>
-    (function() {
-      var D = document;
-      var H = D.documentElement;
-      var theme = localStorage.getItem('theme');
-      var initialTheme = 'light';
-      if (theme) {
-        initialTheme = theme;
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        initialTheme = 'dark';
-      }
-      H.setAttribute('data-theme', initialTheme);
-    })();
-  </script>
 </head>
