@@ -2,7 +2,6 @@
   var D = document;
   var H = D.documentElement;
   var themeSwitcher = D.getElementById('theme-switcher');
-
   if (themeSwitcher) {
     themeSwitcher.addEventListener('click', function(e) {
       e.preventDefault();
@@ -11,7 +10,6 @@
       
       localStorage.setItem('theme', newTheme);
       H.setAttribute('data-theme', newTheme);
-      // No need to call updateThemeIcon(), CSS handles it automatically
     });
   }
 })();

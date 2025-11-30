@@ -1,5 +1,14 @@
 ---
 ---
+
+/* Default state (Light Theme): Show Moon, Hide Sun */
+.icon-moon { display: block; }
+.icon-sun { display: none; }
+
+/* Dark Theme: Hide Moon, Show Sun */
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+
 :root {
   --background-color: #FFF;
   --text-color: #333;
@@ -75,14 +84,6 @@
     --code-built-in-color: #D4C5F9;
   }
 }
-
-/* Default state (Light Theme): Show Moon, Hide Sun */
-.icon-moon { display: block; }
-.icon-sun { display: none; }
-
-/* Dark Theme: Hide Moon, Show Sun */
-[data-theme="dark"] .icon-moon { display: none; }
-[data-theme="dark"] .icon-sun { display: block; }
 
 * {
   margin: 0;
