@@ -19,7 +19,7 @@
         console.error('Error applying theme:', e);
       }
       
-      window.addEventListener('load', function() {
+      window.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(function() {
           H.classList.remove('no-transition');
         });
