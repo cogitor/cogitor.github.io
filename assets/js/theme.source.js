@@ -9,6 +9,7 @@
   function updateThemeIcon(theme) {
     var themeIcon = D.getElementById('theme-icon');
     if (themeIcon) {
+      themeIcon.ariaLabel = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
       themeIcon.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
     }
   }
