@@ -1,12 +1,27 @@
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      var D = document;
+      var H = D.documentElement;
+      var theme = localStorage.getItem('theme');
+      var initialTheme = 'light';
+      if (theme) {
+        initialTheme = theme;
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        initialTheme = 'dark';
+      }
+      H.setAttribute('data-theme', initialTheme);
+    })();
+  </script>
+
   <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
   <link rel="preload" href="/css/main.css?{{site.time | date: '%s'}}" as="style">
   <link rel="preload" href="/assets/third_party/js/highlight.min.js" as="script">
   <script src="https://kit.fontawesome.com/628b2e372a.js" crossorigin="anonymous"></script>
   
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/favicon.ico">
   <!-- helpers to render link content on external websites -->
   <title>{{ page.title }}</title>
