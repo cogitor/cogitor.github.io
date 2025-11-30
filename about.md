@@ -8,9 +8,9 @@ sitemap:
 ---
 # Who am I?
 
-I'm a software engineering manager at [Zalando](https://www.zalando.de/) in Berlin, Germany, following a near-decade-long adventure in Ireland.
+I'm a software engineering manager at [Zalando](https://www.zalando.de/) in Berlin, Germany, following a near-decade-long adventure in Ireland. I believe that empathy is the building block for both great teams and great products.
 
-Growing up bilingual with Hungarian and Serbian in the Balkans sparked a lifelong curiosity about how people communicate and connect. My love for learning more languages and cultures brought me to living in Ireland and Germany. It has taught me a fundamental lesson that I apply to my life and work: there's always more than one way to see the world.
+Growing up bilingual with Hungarian and Serbian in the Balkans sparked a lifelong curiosity about how people communicate and connect. My love for learning more languages and cultures led me to live in Ireland and Germany. It has taught me a fundamental lesson that I apply to my life and work: there's always more than one way to see the world.
 
 This perspective is the foundation of my professional journey of building. My work began with writing code, but it quickly grew into a passion for creating products and, most importantly, the teams that bring them to life. Just as knowing multiple languages opens new ways of thinking, I've found that the best products are built by teams who value different viewpoints. There's a special kind of magic in seeing a team click, where everyone supports each other to solve a customer's problem; this is the magic that comes from truly understanding each other.
 
