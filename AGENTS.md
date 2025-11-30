@@ -11,8 +11,7 @@ The project follows a standard Jekyll project structure:
 *   `_layouts/`: This directory contains the HTML layouts for the different types of pages on the site, such as the default layout and the post layout.
 *   `_includes/`: This directory contains reusable HTML snippets that can be included in the layouts and posts.
 *   `assets/`: This directory contains all the static assets for the site, such as images, CSS, and JavaScript files.
-*   `assets/js/theme.source.js`: Readable source file for theme switcher logic (handles dark/light mode toggle and icon swapping).
-*   `assets/js/theme.js`: Minified production version of `theme.source.js` (generated via terser during `npm run build` and pre-push hook).
+*   `assets/js/theme.js`: Readable source file for theme switcher logic (handles dark/light mode toggle and icon swapping).
 *   `css/main.scss`: SCSS source file (compiled and compressed by Jekyll during build via `sass: compressed` config).
 *   `index.md`: The home page of the blog.
 *   `about.md`: The about page of the blog.

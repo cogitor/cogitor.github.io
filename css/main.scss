@@ -76,6 +76,14 @@
   }
 }
 
+/* Default state (Light Theme): Show Moon, Hide Sun */
+.icon-moon { display: block; }
+.icon-sun { display: none; }
+
+/* Dark Theme: Hide Moon, Show Sun */
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+
 * {
   margin: 0;
 }
