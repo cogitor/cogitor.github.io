@@ -26,6 +26,8 @@ ignore_by_sitemap:
   - /sitemap.xml
   - /rss.xml
   - /robots.txt
+  - /AGENTS
+  - /css/main.css
 
 defaults:
   -
