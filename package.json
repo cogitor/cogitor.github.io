@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Personal blog of Emil Varga",
   "scripts": {
+    "build:img": "./scripts/generate_renditions.sh",
     "build": "bundle exec jekyll build",
-    "dev": "JEKYLL_ENV=development bundle exec jekyll serve"
+    "dev": "JEKYLL_ENV=development bundle exec jekyll serve",
+    "postinstall": "bundle install"
   }
 }

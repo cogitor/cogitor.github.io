@@ -17,6 +17,9 @@ excerpt_separator: <!--break-->
 sass:
   style: compressed
 
+exclude:
+  - AGENTS.md
+
 ignore_by_sitemap:
   - /LICENCE
   - /404.html
