@@ -11,20 +11,22 @@
       localStorage.setItem('theme', newTheme);
       H.setAttribute('data-theme', newTheme);
 
-      // Reload Disqus with the new theme
-      if (window.DISQUS) {
-        DISQUS.reset({
-          reload: true,
-          config: function () {
+      // Force a complete reload of the Disqus iframe
+      var disqusThread = document.getElementById('disqus_thread');
+      if (disqusThread && window.DISQUS) {
+        // Clear the old iframe
+        disqusThread.innerHTML = '';
+        
+        // Re-run the Disqus loading script
+        window.disqus_config = function () {
+            this.page.url = disqusThread.getAttribute('post-url');
+            this.page.identifier = disqusThread.getAttribute('post-id');
             this.page.theme = newTheme;
-            // Make sure to also pass the original URL and identifier
-            var disqusThread = document.getElementById('disqus_thread');
-            if (disqusThread) {
-              this.page.url = disqusThread.getAttribute('post-url');
-              this.page.identifier = disqusThread.getAttribute('post-id');
-            }
-          }
-        });
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://emvar.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
       }
     });
   }
